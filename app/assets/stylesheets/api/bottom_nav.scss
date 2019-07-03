@@ -1,0 +1,24 @@
+.bottom-category-nav{
+    display: flex;
+    border-top: 0.1rem solid #E8E8E8;
+    font-size: 14px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+    justify-content: space-between;
+    vertical-align: baseline;
+}
+
+.bottom-category-nav ul{
+    display: flex;
+    width: 100%;
+    // flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.bottom-category-nav ul li{
+    display: block;
+    flex: 0 1 auto;
+    list-style-type: none;
+}

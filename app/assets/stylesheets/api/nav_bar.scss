@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'RNS-B';
+  src:  url('../fonts/RNS-B.ttf') format('woff2');
+        font-style: normal;
+        font-weight: 100;
+}
+
+.top-nav{
+    display: flex;
+    border-bottom: 0.1rem solid #E8E8E8;
+    font-size: 14px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+    justify-content: space-between;
+    vertical-align: baseline;
+}
+
+.nav-container{
+    padding: 12px 0;
+}
+
+.greeting-links {
+    padding: 0;
+}
+
+.greeting-links a{
+    text-decoration: none;
+    color: #282828;
+    // vertical-align: baseline;
+}
+
+.greeting-links a:hover{
+    text-decoration: none;
+    color: 	#034752;
+    cursor: pointer;
+}
+
+.nav-container-logo {
+    color: #06CE78;
+    padding: 0px 0;
+    font-family: RNS-B;
+    font-size: 30px;
+    font-weight: 400;
+    
+
+}
