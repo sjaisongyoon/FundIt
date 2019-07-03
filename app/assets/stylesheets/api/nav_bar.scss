@@ -35,12 +35,49 @@
     cursor: pointer;
 }
 
+.greeting-dropdown{
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+}
+
+.greeting-dropdown-input{
+    -webkit-appearance: none;
+    font-size: 14px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+
+.greeting-dropdown-input:hover{
+    color: 	#034752;
+    cursor: pointer;
+}
+
+.greeting-dropdown-elements{
+    border: 0;
+    display: block;
+    font-size: 14px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+    cursor: pointer;
+}
+
 .nav-container-logo {
     color: #06CE78;
     padding: 0px 0;
     font-family: RNS-B;
     font-size: 30px;
     font-weight: 400;
-    
-
 }

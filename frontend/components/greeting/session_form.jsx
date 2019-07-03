@@ -18,8 +18,6 @@ const SessionFooterText = ({path}) => {
     }
 }
 
-
-
 class SessionForm extends React.Component {
 
     constructor(props) {
@@ -59,7 +57,6 @@ class SessionForm extends React.Component {
 
     demoUser(demoEmail, demoPassword){
         let rate = 50;
-
         if( demoEmail.length > 0){
             this.setState({
                 email: this.state.email += demoEmail.shift()
@@ -71,8 +68,7 @@ class SessionForm extends React.Component {
             
         } else if (demoPassword.length === 0) {
             this.props.processForm(this.state);
-        }
-            
+        }       
     }
 
     componentWillUnmount(){
@@ -82,7 +78,6 @@ class SessionForm extends React.Component {
     render(){
         let path = this.props.location.pathname;
         const formType = this.props.formType;
-
 
         return(
             <div className="login-signup" >
@@ -105,12 +100,8 @@ class SessionForm extends React.Component {
                     <SessionFooterText path={path}/>
                 </div>
             </div>
-
         )
-
-        
     }
- 
 }
 
 export default SessionForm;
