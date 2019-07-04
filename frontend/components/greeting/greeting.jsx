@@ -41,15 +41,7 @@ class Greeting extends React.Component {
         if (currentUser) {
             return (
                 <div className="greeting-message greeting-dropdown">
-                    <input className="greeting-dropdown-input" type="submit" value={currentUser.name} onClick={this.handleClick}/>
-                    <div className={className2} onClick={this.handleClick}>
-                        {/* <span className="dropdown-content"> */}
-                        <div className={className}>
-                            <div>
-                                <input className="greeting-dropdown-elements" type="submit" value="Log Out!" onClick={this.handleClick} />
-                            </div>
-                        </div>
-                    </div>
+                    <input className="greeting-dropdown-input" type="submit" value={currentUser.name} onClick={() => this.props.openModal('userNavDropdown')}/>
                 </div>
             )
         } else {

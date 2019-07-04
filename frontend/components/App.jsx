@@ -4,9 +4,12 @@ import {Route} from 'react-router-dom';
 import LoginFormContainer from './greeting/login_form_container'
 import SignupFormContainer from './greeting/signup_form_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import Modal from './modal/modal'
+
 
 const App = () => (
     <div>
+        <Modal/>
         <nav className="top-nav">
             <section className="nav-container">
                 <div>Explore</div>
