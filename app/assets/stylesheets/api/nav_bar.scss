@@ -55,7 +55,9 @@
 }
 
 .greeting-dropdown{
-    position: relative;
+    position: absolute;
+    right: 15px;
+    top: 12px;
     display: inline-block;
     font-size: 14px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -90,13 +92,13 @@
     margin: 0;
 }
 
-.dropdown-content:hover {
-    display: inline-block;
-}
+// .dropdown-content:hover {
+//     display: inline-block;
+// }
 
-.greeting-dropdown-input:hover + .dropdown-content{
-    display: block
-}
+// .greeting-dropdown-input:hover + .dropdown-content{
+//     display: block
+// }
 
 .greeting-dropdown-input:hover{
     color: 	#034752;
@@ -130,3 +132,33 @@
     display: flex;
     justify-content: center;
 }
+
+.dropdown-content-show{
+    display: block;
+    z-index: 11;
+    background-color: #F7F7F6;
+    min-height: 300px;
+    min-width: 200px;
+    padding: 5px;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    border: 1px solid #707070;
+    margin: 0;
+}
+
+.dropdown-content-hidden{
+    display: none;
+}
+
+.trans-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: transparent;
+}
+
+//vh, vw
