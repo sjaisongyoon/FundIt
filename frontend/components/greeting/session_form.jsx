@@ -91,9 +91,9 @@ class SessionForm extends React.Component {
                         <input type="submit" value={formType} className="submit-button"/>
                     </form>
 
-                    <div className="demo-button-container">
+                    {formType === 'Login' ? <div className="demo-button-container">
                         <input type="submit" value="Demo Login" className="submit-button" id="demo" onClick={this.handleDemoSubmit}/>
-                    </div>
+                        </div> : null}
                     <div className="auth-errors">{this.props.errors[0]}</div>
                 </div>
                 <div className="auth-form-footer auth-text">
