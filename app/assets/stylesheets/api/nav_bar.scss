@@ -1,8 +1,9 @@
 @font-face {
-  font-family: 'RNS-B';
-  src:  url('../fonts/RNS-B.ttf') format('woff2');
-        font-style: normal;
-        font-weight: 100;
+    font-family: 'RNS-B';
+    src:  asset_url('../fonts/RNS-B.ttf') format('woff2');
+    // src:  url('/assets/stylesheets/fonts/RNS-B.tff') format('woff2');
+    font-style: normal;
+    font-weight: 100;
 }
 
 .top-nav{
