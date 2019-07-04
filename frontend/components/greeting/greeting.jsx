@@ -39,9 +39,9 @@ class Greeting extends React.Component {
                 <div className="greeting-message greeting-dropdown">
                     <input className="greeting-dropdown-input" type="submit" value={currentUser.name}/>
                     <span className="dropdown-content">
-                        <div>
+                        {/* <div> */}
                             <input className="greeting-dropdown-elements" type="submit" value="Log Out!" onClick={logout} />
-                        </div>
+                        {/* </div> */}
                     </span>
                 </div>
             )
