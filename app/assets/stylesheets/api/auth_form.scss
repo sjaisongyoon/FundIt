@@ -71,6 +71,13 @@
     color: #282828;
 }
 
-.auth-form-container .auth-errors {
+.errors-container {
+    display: flex;
+    justify-content: center;
+}
+
+.errors-container .auth-errors {
     color:red;
+    font-size: 12px;
+    align-items: center;
 }

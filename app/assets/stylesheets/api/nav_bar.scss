@@ -12,8 +12,9 @@
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #282828;
     justify-content: space-between;
-    vertical-align: baseline;
-    padding: 0 5px;
+    align-items: center;
+    padding: 0 24px;
+    height: 50px;
 }
 
 .top-nav section{
@@ -72,7 +73,7 @@
     color: #282828;
     cursor: pointer;
     border: 0;
-    padding: 0;
+    // padding: 0;
     align-content: flex-start;
     position: relative;
 }
@@ -127,31 +128,16 @@
 
 .dropdown-content-show{
     display: block;
-    z-index: 11;
     background-color: #F7F7F6;
     min-height: 300px;
     min-width: 200px;
     padding: 5px;
     position: absolute;
-    right: 10px;
-    top: 35px;
+    right: 20px;
+    top: 50px;
     border: 1px solid #707070;
     margin: 0;
 }
-
-// .dropdown-content-hidden{
-//     display: none;
-// }
-
-// .trans-overlay{
-//     position: fixed;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     z-index: 10;
-//     background-color: transparent;
-// }
 
 .modal-background {
   position: fixed;
@@ -159,7 +145,10 @@
   bottom: 0;
   right: 0;
   left: 0;
-//   background: rgba(0, 0, 0, 0.7);
   background-color: transparent;
   z-index: 1;
+}
+
+.hide {
+    display: none;
 }

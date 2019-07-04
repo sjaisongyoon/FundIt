@@ -11,8 +11,7 @@ class UserNavDropdown extends React.Component {
 
     handleClick(e){
         e.preventDefault();
-        this.props.logout()
-        this.props.closeModal();
+        this.props.logout().then(this.props.closeModal);
     }
 
     render(){

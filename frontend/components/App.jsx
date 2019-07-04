@@ -20,10 +20,10 @@ const App = () => (
             </section>
             <section className="nav-greeting-container"><GreetingContainer/></section>
         </nav>
-        <section className="grey-background">
-            <AuthRoute path="/signup" component={SignupFormContainer}/>
-            <AuthRoute path="/login" component={LoginFormContainer} />
-        </section>
+        
+        <AuthRoute path="/signup" component={SignupFormContainer}/>
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        
         <footer>
             <nav className="bottom-category-nav auth-text">
                 <ul>
