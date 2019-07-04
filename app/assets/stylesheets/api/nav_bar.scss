@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'RNS-B';
     src:  asset_url('../fonts/RNS-B.ttf') format('woff2');
-    // src:  url('/assets/stylesheets/fonts/RNS-B.tff') format('woff2');
     font-style: normal;
     font-weight: 100;
 }
@@ -14,10 +13,28 @@
     color: #282828;
     justify-content: space-between;
     vertical-align: baseline;
+    padding: 0 5px;
+}
+
+.top-nav section{
+    width: 33%;
+    
 }
 
 .nav-container{
+    display: flex;
     padding: 12px 0;
+    flex-direction: row;
+}
+
+.nav-container div{
+    margin: 0 15px 0 0;
+}
+
+.nav-greeting-container{
+    padding: 12px 0;
+    display: flex;
+    justify-content: flex-end;  
 }
 
 .greeting-links {
@@ -27,6 +44,7 @@
 .greeting-links a{
     text-decoration: none;
     color: #282828;
+    margin: 0 0 0 15px;
     // vertical-align: baseline;
 }
 
@@ -42,6 +60,7 @@
     font-size: 14px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #282828;
+    margin: 0 0 0 15px;
 }
 
 .greeting-dropdown-input{
@@ -52,13 +71,30 @@
     cursor: pointer;
     border: 0;
     padding: 0;
+    align-content: flex-start;
+    position: relative;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  z-index: 1;
+.dropdown-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #F7F7F6;
+    min-height: 300px;
+    min-width: 200px;
+    padding: 5px;
+    position: absolute;
+    right: 0%;
+    border: 1px solid #707070;
+    margin: 0;
+}
+
+.dropdown-content:hover {
+    display: inline-block;
+}
+
+.greeting-dropdown-input:hover + .dropdown-content{
+    display: block
 }
 
 .greeting-dropdown-input:hover{
@@ -73,6 +109,15 @@
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #282828;
     cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    background-color: transparent;
+    margin: 5px;
+}
+
+.greeting-dropdown-elements:hover{
+    color:blue;
+    text-decoration: underline;
 }
 
 .nav-container-logo {
@@ -81,4 +126,6 @@
     font-family: RNS-B;
     font-size: 30px;
     font-weight: 400;
+    display: flex;
+    justify-content: center;
 }
