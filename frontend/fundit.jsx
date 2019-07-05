@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/Root';
-import * as APIUtil from './util/session_api_util';
+import * as APIProject from './util/project_util';
 import configureStore from './store/store';
-import {login, logout, signup} from './actions/session_actions'
+import {receiveProjects} from './actions/project_actions'
 
 
 
@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
+
+    window.fetchProjects = APIProject.fetchProjects;
+    window.fetchProject = APIProject.fetchProject;
+    window.createProject = APIProject.createProject;
+    window.updateProject = APIProject.updateProject;
+    window.deleteProject = APIProject.deleteProject;
+
+    window.receiveProjects = receiveProjects;
+
+
+
 
     ReactDOM.render(<Root store={store}/>, root);
 })

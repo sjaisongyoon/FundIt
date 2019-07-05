@@ -26,7 +26,8 @@ class Api::ProjectsController < ApplicationController
         @project = Project.find_by(id: params[:id])
 
         unless current_user.id == @project.author_id
-            render json: ["Invalid Permissions"], status 404 and return
+            render json: ["Invalid Permissions"], status: 404
+            return
         end
         
         if @project.update_attributes(project_params)
@@ -41,11 +42,12 @@ class Api::ProjectsController < ApplicationController
         project = Project.find_by(id: params[:id])
 
         unless current_user.id == project.author_id
-            render json: ["Invalid Permissions"], status 404 and return
+            render json: ["Invalid Permissions"], status: 404 
+            return
         end
 
         Project.destroy(project.id)
-        render json :index
+        render :index
     end
 
     private 
