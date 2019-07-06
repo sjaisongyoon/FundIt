@@ -3,9 +3,9 @@ export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 
-export const receiveProjects = (projects) => ({
+export const receiveProjects = (payload) => ({
     type: RECEIVE_ALL_PROJECTS,
-    projects
+    payload
 });
 
 const receiveProject = (project) => ({
@@ -20,7 +20,7 @@ const removeProject = (projectId) => ({
 
 export const fetchProjects = () => dispatch => {
     return APIProject.fetchProjects()
-        .then(projects => dispatch(receiveProjects(projects)))
+        .then(payload => dispatch(receiveProjects(payload)))
 };
 
 export const fetchProject = (projectId) => dispatch => {

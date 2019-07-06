@@ -3,7 +3,7 @@ class Api::ProjectsController < ApplicationController
     before_action :logged_in?, only: [:create, :update]
 
     def index
-        @projects = Project.all
+        @projects = Project.includes(:author).all
     end
 
     def show

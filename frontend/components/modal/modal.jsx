@@ -28,7 +28,6 @@ function Modal({ modal, closeModal, logout }) {
 }
 
 const mapStateToProps = state => {
-    // debugger;
     return {
         modal: state.ui.modal
     };
