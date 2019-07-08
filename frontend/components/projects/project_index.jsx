@@ -14,16 +14,24 @@ class ProjectIndex extends React.Component {
     }
 
     render(){
-        // const {fetchUser} = this.props
         return (
-            <section className="index-page">
-                <div className="all-projects-container">
-                    {this.props.projectsWithAuthors.map( project => (
-                        <ProjectIndexItem key={project.id} 
-                        project={project}/>
-                    ))}
+            <div className="index-background">
+                <div className="proj-category-header">
+                    <div className="proj-categories">
+                        Show Me All Projects With Categories
+                    </div>
                 </div>
-            </section>
+
+                <section className="index-page">
+                    <h3>Explore {this.props.projectsWithAuthors.length} projects</h3>
+                    <div className="all-projects-container">
+                        {this.props.projectsWithAuthors.map( project => (
+                            <ProjectIndexItem key={project.id} 
+                            project={project}/>
+                        ))}
+                    </div>
+                </section>
+            </div>
         )
 
     }

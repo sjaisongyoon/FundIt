@@ -1,16 +1,9 @@
 .all-projects-container{
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-    // align-items: center;
     width:100%;
-    // margin: 0 10px;
-    // padding: 0 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
-    width: 95%;
+    max-width: 1366px;
     margin: 0 auto;
     
     @media (max-width: 70em) {
@@ -27,14 +20,36 @@
 
 .project-item-container{
     // max-width: 400px;
-    border: .1px solid black;
-    // margin: 0, auto;
+    border: 0.1rem solid #DCDEDD;
 }
 
 .index-page {
-    // display: flex;
-    // align-items: center;
-    // max-width: 100%;
-    // overflow: hidden;
-    padding: 0 60px;
+    padding: 48px 60px 0 60px;
+}
+
+.index-page h3 {
+    margin: 0 0 30px 0;
+    font-size: 22px;
+}
+
+.proj-category-header{
+    padding: 40px 0 40px 0;
+    border-bottom: 0.1rem solid #E8E8E8;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.index-background{
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+}
+
+.project-short-description{
+    padding: 24px 18px 0;
+}
+.index-project-details{
+    padding: 18px;
 }
