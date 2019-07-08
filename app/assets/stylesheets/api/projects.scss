@@ -1,3 +1,180 @@
 // Place all the styles related to the api/Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.project-show-container{
+    padding: 0 60px;
+    margin: 0 auto;
+    max-width: 1366px;
+}
+
+.project-show-background{
+    background-color: #FBFBFA;
+}
+
+.project-title-desc-container{
+    display: flex;
+    flex-direction: column;
+    padding: 54px 0px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.project-title-desc-container h2{
+    font-size: 38px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin: 0 0 18px 0;
+}
+
+.project-title-desc-container h3{
+    font-size: 18px;
+    text-align: center;
+    color: #656969;
+    margin: 0 0 20px 0;
+    padding: 0 60px;
+}
+
+.project-content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-content-container img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+}
+
+.media-container {
+    width: calc(100% * 8 / 12 );
+    min-height: 480px;
+    padding: 0 18px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+.project-stats {
+    width: calc(100% * 4 / 12 );
+    padding: 0 18px;
+}
+
+.pledge-status {
+    background-color: #037362;
+    height: 3px;
+}
+
+.progress-bar-background {
+    background-color: #E8E8E8;
+    height: 3px;
+    margin: 0 0 18px 0;
+}
+
+.pledge-amount{
+    color: #037362;
+    font-size: 24px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+.pledge-stat-notes{
+    color: #656969;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 12px 0;
+}
+
+.project-detail-footer-bar{
+    padding: 18px 18px;
+    display: flex;
+    width: 90%;
+}
+
+.project-nav {
+    border-top: 1px solid #DCDEDD;
+    border-bottom: 1px solid #DCDEDD;
+    // max-width: 1366px;
+
+}
+
+.header-container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    // width: 90%;
+    padding: 0 60px;
+    max-width: 1040px;
+}
+
+.campaign-header{
+    margin: 0 18px;
+    padding: 20px 5px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    border-bottom: 3px solid black;
+    z-index: 1;
+}
+
+.campaign-content-container{
+    padding: 60px 18px;
+    margin: 0 auto;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    display: flex;
+    max-width: 1040px;
+
+}
+
+.campaign-content{
+    width: calc(100% * 8 / 12 );
+    padding: 0 18px;
+    // max-width: 1366px;
+
+}
+
+.campaign-content h2{
+    font-size: 22px;
+}
+
+.author-rewards-container{
+    width: calc(100% * 4 / 12 );
+    padding: 0 18px;
+}
+
+.author{
+    padding: 0 18px;
+    border: 1px solid #E8E8E8;
+}
+
+.author h3 {
+    font-weight: bold;
+    // margin: 0 0 0 18px;
+}
+
+.author div{
+    font-size: 14px;
+}
+
+.locpin {
+    max-width: 20px;
+    vertical-align: middle;
+}
+
+.backer-count, .day-counter{
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+
+}
+
+.back-proj-button{
+    background-color: #009E74;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 100%;
+    height: 48px;
+}

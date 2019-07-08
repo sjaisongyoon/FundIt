@@ -26,6 +26,7 @@ class Project < ApplicationRecord
         foreign_key: :author_id,
         class_name: 'User' 
 
+    has_one_attached :photo
 
     # belongs_to :category,
     #     primary_key: :id,

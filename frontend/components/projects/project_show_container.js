@@ -4,7 +4,7 @@ import ProjectShow from './project_show';
 
 const mapStateToProps = (state, ownProps) => ({
     project: state.entities.projects[ownProps.match.params.projectId] || {},
-    author: state.entities.users.authorName
+    author: state.entities.users.author || {}
 });
 
 const mapDispatchToProps = dispatch => ({

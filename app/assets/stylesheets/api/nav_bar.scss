@@ -35,7 +35,7 @@
 .nav-greeting-container{
     padding: 12px 0;
     display: flex;
-    justify-content: flex-end;  
+    justify-content: flex-end;
 }
 
 .greeting-links {
@@ -56,9 +56,6 @@
 }
 
 .greeting-dropdown{
-    position: absolute;
-    right: 15px;
-    top: 12px;
     display: inline-block;
     font-size: 14px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -151,4 +148,8 @@
 
 .hide {
     display: none;
+}
+
+.greeting-message{
+    display: flex;
 }
