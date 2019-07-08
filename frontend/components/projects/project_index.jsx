@@ -14,14 +14,13 @@ class ProjectIndex extends React.Component {
     }
 
     render(){
-        const {fetchUser} = this.props
+        // const {fetchUser} = this.props
         return (
             <section className="index-page">
                 <div className="all-projects-container">
                     {this.props.projectsWithAuthors.map( project => (
                         <ProjectIndexItem key={project.id} 
-                        project={project} 
-                        fetchUser={fetchUser}/>
+                        project={project}/>
                     ))}
                 </div>
             </section>

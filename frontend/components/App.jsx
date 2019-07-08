@@ -6,6 +6,7 @@ import SignupFormContainer from './greeting/signup_form_container';
 import ProjectIndexContainer from './projects/projects_index_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import Modal from './modal/modal';
+import ProjectShowContainer from './projects/project_show_container';
 
 
 const App = () => (
@@ -24,7 +25,8 @@ const App = () => (
         
         <AuthRoute path="/signup" component={SignupFormContainer}/>
         <AuthRoute path="/login" component={LoginFormContainer} />
-        <Route path="/projects" component={ProjectIndexContainer}/>
+        <Route exact path="/projects/:projectId" component={ProjectShowContainer}/>
+        <Route exact path="/projects" component={ProjectIndexContainer}/>
         
         <footer>
             <nav className="bottom-category-nav auth-text">

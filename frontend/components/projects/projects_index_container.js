@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchProjects } from '../../actions/project_actions';
-import projectIndex from './project_index';
+import ProjectIndex from './project_index';
 
 const projectsWithAuthors = state => {
     return Object.values(state.entities.projects).map( (project) => {
@@ -16,7 +16,7 @@ const mapStateToProps = (state) =>({
 
 const mapDispatchToProps = dispatch =>({
     fetchProjects: () => dispatch(fetchProjects()),
-    fetchUser: (userId) => dispatch(fetchUser(userId)),
+    // fetchUser: (userId) => dispatch(fetchUser(userId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(projectIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectIndex)

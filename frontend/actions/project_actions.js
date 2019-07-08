@@ -8,9 +8,9 @@ export const receiveProjects = (payload) => ({
     payload
 });
 
-const receiveProject = (project) => ({
+const receiveProject = (payload) => ({
     type: RECEIVE_PROJECT,
-    project
+    payload
 });
 
 const removeProject = (projectId) => ({
@@ -25,17 +25,17 @@ export const fetchProjects = () => dispatch => {
 
 export const fetchProject = (projectId) => dispatch => {
     return APIProject.fetchProject(projectId)
-        .then(project => dispatch(receiveProject(project)))
+        .then(payload => dispatch(receiveProject(payload)))
 };
 
 export const createProject = (project) => dispatch => {
     return APIProject.createProject(project)
-        .then(project => dispatch(receiveProject(project)))
+        .then(payload => dispatch(receiveProject(payload)))
 };
 
 export const updateProject = (project) => dispatch => {
     return APIProject.updateProject(project)
-        .then(project => dispatch(receiveProjects(project)))
+        .then(payload => dispatch(receiveProjects(payload)))
 };
 
 export const deleteProject = (projectId) => {
