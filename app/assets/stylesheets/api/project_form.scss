@@ -24,20 +24,20 @@
     }
 }
 
-.cat-form {
+.form {
     padding: 0 18px 84px 18px;
     margin: 0 auto;
     max-width: 605px;
     position: relative;
 }
 
-.cat-form h2{
+.form h2{
     font-size: 28px;
     text-align: center;
     margin-bottom: 12px;
 }
 
-.cat-form h3{
+.form h3{
     font-size: 18px;
     text-align: center;
     margin-bottom: 36px;
@@ -45,7 +45,7 @@
 }
 
 
-.cat-form .cat-dropdown{
+.form .dropdown{
     border: 0.1rem solid #DCDEDD;
     padding: 12px 18px;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
@@ -108,7 +108,7 @@
     cursor: pointer;
 }
 
-.cat-dropdown.clicked{
+.dropdown.clicked{
     border: 1px solid #282828;
 
 }
@@ -121,6 +121,45 @@
     margin: 0 10px 0 0;
 }
 
-.cat-dropdown.cat-id{
+.dropdown.dark-text{
     color: #282828;
+}
+
+.form.hide{
+    display: hidden;
+}
+
+.project-title-desc-container{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0 !important;
+    justify-content: center;
+    max-height: 500px;
+
+}
+
+.project-title-desc-container label{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.project-title-desc-container input{
+    display: block;
+    width: 95%;
+    font-size: 18px;
+    color:#282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.project-title-desc-container textarea{
+    display: block;
+    width: 95%;
+    height: 250px;
+    font-size: 16px;
+    color: #282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
