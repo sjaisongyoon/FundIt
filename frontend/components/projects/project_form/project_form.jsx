@@ -123,7 +123,7 @@ class ProjectForm extends React.Component{
 
         if (buttonIdx === 0 && categoryId){
             nextButtonStatus = false;
-        } else if (buttonIdx === 1 && location !== "Please Choose Your Location" ){
+        } else if (buttonIdx === 1 && (location !== "Please Choose Your Location") ){
             nextButtonStatus = false;
         } else if (buttonIdx === 2 && (title && description)){
             nextButtonStatus = false;
@@ -180,10 +180,10 @@ class ProjectForm extends React.Component{
                         <h2>Give your project an attractive name</h2>
                         <h3>You can always change this later if you think of something better</h3>
                         <div className="project-title-desc-container">
-                            <label>Project Title:
+                            <label><div>Project Title:</div>
                                 <input type="text" value={title} onChange={this.update('title')}/>
                             </label>
-                            <label> Project Description:
+                            <label> <div>Project Description:</div>
                                 <textarea value={description} onChange={this.update('description')}/>
                             </label>
                         </div>
@@ -192,16 +192,16 @@ class ProjectForm extends React.Component{
                     <form className={`form ${buttonIdx === 3 ? '' : 'hide'}`} >
                         <h2>There's just a couple more details we need</h2>
                         <div className="project-extra-detail">
-                            <label>Pledge Goal (USD):
+                            <label><div>Pledge Goal (USD):</div>
                                 <input type="number" value={pledgeGoal} onChange={this.update('pledgeGoal')} min="0" />
                             </label>
-                            <label>Campaign End Date:
+                            <label><div>Campaign End Date:</div>
                                 <input type="date" value={endDate} onChange={this.update('endDate')} />
                             </label>
-                            <label> Campaign:
+                            <label> <div>Campaign:</div>
                                 <textarea value={campaign} onChange={this.update('campaign')} />
                             </label>
-                            <label>Project Photo
+                            <label id="file-label"> <div>Project Photo</div>
                                 <input type="file" onChange={this.handleFile}/>
                                 <div className={`photo-container ${photoUrl !== 'none' ? '':'hide'}`} style={{backgroundImage: photoUrl}}></div>
                             </label>

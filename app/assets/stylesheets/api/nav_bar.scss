@@ -28,8 +28,14 @@
     flex-direction: row;
 }
 
-.nav-container div{
+.nav-container a{
     margin: 0 15px 0 0;
+    text-decoration: none;
+    color: #282828;
+}
+
+.nav-container a:hover{
+    color: #037362;
 }
 
 .nav-greeting-container{

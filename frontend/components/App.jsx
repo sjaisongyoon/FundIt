@@ -1,6 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting/greetiing_container';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Link} from 'react-router-dom';
 import LoginFormContainer from './greeting/login_form_container';
 import SignupFormContainer from './greeting/signup_form_container';
 import ProjectIndexContainer from './projects/projects_index_container';
@@ -15,8 +15,8 @@ const App = () => (
         <Modal/>
         <nav className="top-nav">
             <section className="nav-container">
-                <div>Explore</div>
-                <div>Start A Project</div>
+                <Link to={'/projects'}>Explore</Link>
+                <Link to={'/projects/start'}>Start A Project</Link>
             </section>
             <section className="nav-container-logo" >
                 <div> FundIt! </div>
