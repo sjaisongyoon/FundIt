@@ -23,7 +23,7 @@ class ProjectIndex extends React.Component {
                 </div>
 
                 <section className="index-page">
-                    <h3>Explore {this.props.projectsWithAuthors.length} projects</h3>
+                    <h3>Explore <div className="proj-count">{this.props.projectsWithAuthors.length} projects</div></h3>
                     <div className="all-projects-container">
                         {this.props.projectsWithAuthors.map( project => (
                             <ProjectIndexItem key={project.id} 

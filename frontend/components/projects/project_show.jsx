@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
+import {calcTimeDiff, numberWithCommas, calcWidth} from './project_calcs';
 
 
 class ProjectShow extends React.Component {
 
     constructor(props){
         super(props)
-        // this.calcTimeDiff.bind(this)
     }
 
     componentDidMount(){
@@ -19,47 +19,16 @@ class ProjectShow extends React.Component {
         }
     }
 
-    calcTimeDiff(endDate){
-        let start = new Date();
-        let finish = new Date(endDate);
-
-        let diff = finish - start ;
-        if (diff < 0 ) return {timeleft: 'This has ended', inc:""}
-        let converted = diff/1000/60/60/24
-        let days = Math.floor(converted);
-        converted = converted % 1;
-        let hours = Math.floor(converted * 24);
-        converted = converted % 1;
-        let minutes = Math.floor(converted * 60);
-        converted = converted % 1;
-        let seconds = Math.floor(converted * 60); 
-
-        if (days > 0){
-            return {timeleft: `${days}`, inc: 'days to go'}
-        } else if (hours > 0){
-            return { timeleft: `${hours}`, inc: 'hours to go' }
-        } else {
-            return { timeleft: `${minutes}`, inc: 'minutes to go' }
-        }
-
-    }
-
     render(){
         const project = this.props.project;
         let ratio = (project.amountPledged / project.pledgeGoal);
-        let width;
-        if(project.pledgeGoal > 0 && ratio > 1){
-            width = 100;
-        } else if (project.pledgeGoal <= 0){
-            width = 0;
-        } else {
-            width = Math.floor(ratio*100);
-        }
+        let width = calcWidth(ratio, project.pledgeGoal)
+
         let pledgeBarStyle = {
             width: width+'%'
         }
 
-        let timeDiff = this.calcTimeDiff(project.endDate);
+        let timeDiff = calcTimeDiff(project.endDate);
         return (
             <div className="project-display">
                 <div className="project-show-background">
@@ -83,8 +52,8 @@ class ProjectShow extends React.Component {
                                 <div className="progress-bar-background">
                                     <div className="pledge-status" style={pledgeBarStyle}> </div>
                                 </div>
-                                <div className="pledge-amount"> ${project.amountPledged}</div>
-                                <div className="pledge-stat-notes">pledged of ${project.pledgeGoal} goal</div>
+                                <div className="pledge-amount"> ${numberWithCommas(project.amountPledged)}</div>
+                                <div className="pledge-stat-notes">pledged of ${numberWithCommas(project.pledgeGoal)} goal</div>
                                 <div className="backer-count"> 20 </div>
                                 <div className="pledge-stat-notes"> backers</div>
                                 <div className="day-counter"> {timeDiff.timeleft}</div>
