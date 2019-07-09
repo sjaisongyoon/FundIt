@@ -20,6 +20,7 @@ class ProjectForm extends React.Component{
         this.handleCatDropDown = this.handleCatDropDown.bind(this);
         this.handleLocDropDown = this.handleLocDropDown.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this)
     }
     
     update(field){
@@ -59,9 +60,19 @@ class ProjectForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         // debugger;
+        const formData = new FormData();
+        formData.append('project[category_id]', this.state.categoryId)
+        formData.append('project[title]', this.state.title)
+        formData.append('project[description]', this.state.description)
+        formData.append('project[location]', this.state.location)
+        formData.append('project[pledge_goal]', this.state.pledgeGoal)
+        formData.append('project[end_date]', this.state.endDate)
+        formData.append('project[campaign]', this.state.campaign)
+        formData.append('project[photo]', this.state.photoFile)
+
     
         if (e.target.id === "next" && this.state.buttonIdx === 3){
-            this.props.createProject({})
+            this.props.createProject(formData)
         } else if (e.target.id === "prev"){
             this.setState({
                 buttonIdx: this.state.buttonIdx - 1
@@ -72,6 +83,24 @@ class ProjectForm extends React.Component{
             })
         }
 
+    }
+
+    handleFile(e){
+
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () => this.setState({photoUrl: reader.result, photoFile: file});
+        
+        if (file){
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({photoUrl: "", photoFile: null})
+        }
+        
+        this.setState({
+            photoFile: e.currentTarget.files[0],
+            photoUrl: e.currentTarget.files[0]
+        })
     }
 
 
@@ -90,6 +119,8 @@ class ProjectForm extends React.Component{
 
         let nextButtonStatus;
 
+        let photoUrl = this.state.photoUrl ? `url(${this.state.photoUrl})` : 'none';
+
         if (buttonIdx === 0 && categoryId){
             nextButtonStatus = false;
         } else if (buttonIdx === 1 && location !== "Please Choose Your Location" ){
@@ -101,12 +132,13 @@ class ProjectForm extends React.Component{
         } else {
             nextButtonStatus = true
         }
-
+        console.log(endDate)
         return(
             <div className="form-page">
                 <div className="page-num-indicator"> {pageNum + buttonIdx} of 4 </div>
                 <div className="form-container">
-                    <form className={`form ${buttonIdx > 0 ? 'hide':'' }`}>
+                
+                    <form className={`form ${buttonIdx > 0 ? 'hide' : ''}`}>
                         <h2>First, let's get you setup.</h2>
                         <h3>Pick a project category to connect with a specific community. You can always update this later.</h3>
                         <div className={`dropdown ${open ? 'clicked':''} ${categoryId ? "dark-text":''}`} onClick={this.handleCatDropDown}> 
@@ -126,7 +158,7 @@ class ProjectForm extends React.Component{
                         </div>
                     </form>
 
-                    <form className={`form ${buttonIdx === 1 ? '':'hide'}`}>
+                    <form className={`form ${buttonIdx === 1 ? '' : 'hide'}`}>
                         <h2>What's your location?</h2>
                         <h3>Please choose the region that is closest to you. You can always edit that later</h3>
                         <div className={`dropdown ${open ? 'clicked' : ''} ${location === "Please Choose Your Location" ? "dark-text" : ''}`} 
@@ -135,8 +167,8 @@ class ProjectForm extends React.Component{
                         </div>
                         <div className={`list-container ${open ? 'open' : ''}`}>
                             <ul>
-                                {majorRegions.map( region =>(
-                                    <li onClick={this.handleLocDropDown}>
+                                {majorRegions.map( (region, idx) =>(
+                                    <li key={idx} onClick={this.handleLocDropDown}>
                                         {region}
                                     </li>
                                 ))}
@@ -157,7 +189,7 @@ class ProjectForm extends React.Component{
                         </div>
                     </form>
 
-                    <form className={`form ${buttonIdx === 3 ? '' : 'hide'}`}>
+                    <form className={`form ${buttonIdx === 3 ? '' : 'hide'}`} >
                         <h2>There's just a couple more details we need</h2>
                         <div className="project-extra-detail">
                             <label>Pledge Goal (USD):
@@ -169,6 +201,10 @@ class ProjectForm extends React.Component{
                             <label> Campaign:
                                 <textarea value={campaign} onChange={this.update('campaign')} />
                             </label>
+                            <label>Project Photo
+                                <input type="file" onChange={this.handleFile}/>
+                                <div className={`photo-container ${photoUrl !== 'none' ? '':'hide'}`} style={{backgroundImage: photoUrl}}></div>
+                            </label>
                         </div>
                     </form>
 
@@ -178,7 +214,7 @@ class ProjectForm extends React.Component{
 
                 <div className="button-container form">
                     <button id="prev" disabled={buttonIdx > 0 ? false : true} onClick={this.handleSubmit}>
-                        {prevButtonText[buttonIdx]}
+                        <img className={`left-arrow ${buttonIdx > 0 ? '':'hide'} `} src={window.images.leftArrow}/> {prevButtonText[buttonIdx]}
                     </button> 
                     <button id="next" disabled={nextButtonStatus} onClick={this.handleSubmit}>
                         {nextButtonText[buttonIdx]}

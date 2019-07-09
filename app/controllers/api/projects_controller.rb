@@ -11,8 +11,14 @@ class Api::ProjectsController < ApplicationController
     end
     
     def create 
+        # debugger
+        format_end_date = Date.strptime(params[:project][:end_date], '%Y-%m-%d')
+        params[:project][:end_date] = format_end_date
         @project = Project.new(project_params)
         @project.author_id = current_user.id
+        # debugger
+
+
 
         if @project.save
             render :show
@@ -54,7 +60,7 @@ class Api::ProjectsController < ApplicationController
 
     def project_params
         params.require(:project).permit(:title, :description, :amount_pledged,
-            :pledge_goal, :end_date, :category_id, :location, :campaign)
+            :pledge_goal, :end_date, :category_id, :location, :campaign, :photo)
     end
 
 end

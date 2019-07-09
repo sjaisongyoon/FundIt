@@ -97,7 +97,7 @@
     color: #656969;
 }
 
-.button-container button{
+#next{
     -webkit-appearance: none;
     border: none;
     background: none;
@@ -126,7 +126,7 @@
 }
 
 .form.hide{
-    display: hidden;
+    display: none;
 }
 
 .project-title-desc-container{
@@ -138,14 +138,14 @@
 
 }
 
-.project-title-desc-container label{
+.project-title-desc-container label, .project-extra-detail label{
     display: block;
     margin-bottom: 10px;
     font-size: 20px;
     width: 100%;
 }
 
-.project-title-desc-container input{
+.project-title-desc-container input, .project-extra-detail input{
     display: block;
     width: 95%;
     font-size: 18px;
@@ -154,7 +154,7 @@
 
 }
 
-.project-title-desc-container textarea{
+.project-title-desc-container textarea, .project-extra-detail textarea{
     display: block;
     width: 95%;
     height: 250px;
@@ -162,4 +162,50 @@
     color: #282828;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+}
+
+.project-extra-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+.photo-container{
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.photo-container.hide{
+    display: none;
+    height: 0px;
+}
+
+#prev{
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    height: 42px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #656969;
+    fill: #656969;
+}
+
+#prev:hover{
+    color: #282828;
+}
+
+.left-arrow{
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+    opacity: 80%;
+}
+
+.left-arrow.hide{
+    display: none;
 }
