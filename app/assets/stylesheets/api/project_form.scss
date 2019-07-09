@@ -1,0 +1,121 @@
+.form-page{
+    padding: 0 60px;
+    max-width: 1366px;
+    margin: 0 auto;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.page-num-indicator{
+    padding: 0 18px;
+    font-size: 14px;
+    color: #282828;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1366px;
+}
+
+@media (min-width: 600px){
+    .form-container {
+        padding-top: 15vh;
+    }
+}
+
+.cat-form {
+    padding: 0 18px 84px 18px;
+    margin: 0 auto;
+    max-width: 605px;
+    position: relative;
+}
+
+.cat-form h2{
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.cat-form h3{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 36px;
+    color: rgba(0,0,0,0.6);
+}
+
+
+.cat-form .cat-dropdown{
+    border: 0.1rem solid #DCDEDD;
+    padding: 12px 18px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+    position: relative;
+    max-width: 605px;
+    cursor: pointer;
+    color: #656969;
+}
+
+.list-container{
+    display: none;
+    padding: 10px 18px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.list-container.open{
+    display: block;
+    z-index: 1;
+    border: 1px solid #282828;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: white;
+    margin: 10px 18px;
+}
+
+.list-container li{
+    padding: 12px;
+    margin: 0;
+    box-sizing: inherit;
+    cursor: pointer;
+
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-top: 0.1rem solid #DCDEDD;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.button-container span{
+    font-size: 14px;
+    color: #656969;
+}
+
+.button-container button{
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    background-color: #282828;
+    color: white;
+    height: 42px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cat-dropdown.clicked{
+    border: 1px solid #282828;
+
+}
+
+.down-arrow{
+    max-width: 4%;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    margin: 0 10px 0 0;
+}
