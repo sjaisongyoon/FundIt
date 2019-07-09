@@ -78,6 +78,7 @@
     margin: 0;
     box-sizing: inherit;
     cursor: pointer;
+    color:#282828
 
 }
 
@@ -118,4 +119,8 @@
     position: absolute;
     right: 0;
     margin: 0 10px 0 0;
+}
+
+.cat-dropdown.cat-id{
+    color: #282828;
 }

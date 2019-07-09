@@ -20,7 +20,6 @@ class ProjectForm extends React.Component{
     }
 
     handleDropDownClick(e){
-        // debugger;
         e.preventDefault();
         if (e.target.className === "cat-dropdown"){
             this.setState({open: !this.state.open})
@@ -37,7 +36,6 @@ class ProjectForm extends React.Component{
     render(){
         let pageNum = 1;
         let {open, categoryName, categoryId} = this.state
-        // debugger;
         return(
             <div className="form-page">
                 <div className="page-num-indicator"> {`${pageNum}`} of 3 </div>
@@ -45,7 +43,7 @@ class ProjectForm extends React.Component{
                     <form className="cat-form">
                         <h2>First, let's get you setup.</h2>
                         <h3>Pick a project category to connect with a specific community. You can always update this later.</h3>
-                        <div className={`cat-dropdown ${open ? 'clicked':''}`} onClick={this.handleDropDownClick}> 
+                        <div className={`cat-dropdown ${open ? 'clicked':''} ${categoryId ? "cat-id":''}`} onClick={this.handleDropDownClick}> 
                             {categoryName} <img className="down-arrow" src={window.images.downArrow}/>
                         </div>
                         <div className={`list-container ${open ? 'open':''}`}>
