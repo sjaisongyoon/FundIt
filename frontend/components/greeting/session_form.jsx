@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 
 const SessionFooterText = ({path}) => {
@@ -28,15 +28,19 @@ class SessionForm extends React.Component {
             password: "",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.demoUser = this.demoUser.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user)
-            .then(() => this.props.history.push('/') );
+        if (!this.props.nextPath || this.props.nextPath === '/login' || this.props.nextPath === '/signup' ){
+            this.props.processForm(user)
+                .then(() => this.props.history.push('/'))
+        } else {
+            this.props.processForm(user)
+                .then( () => this.props.history.push(this.props.nextPath))
+        }
     }
 
     update(field){
@@ -67,7 +71,14 @@ class SessionForm extends React.Component {
             }, () => window.setTimeout(() => this.demoUser(demoEmail, demoPassword), rate))
             
         } else if (demoPassword.length === 0) {
-            this.props.processForm(this.state);
+            // debugger
+            if (!this.props.nextPath){
+                this.props.processForm(this.state)
+                    .then(() => this.props.history.push('/'))
+            } else {
+                this.props.processForm(this.state)
+                    .then(() => this.props.history.push(this.props.nextPath))
+            }
         }       
     }
 

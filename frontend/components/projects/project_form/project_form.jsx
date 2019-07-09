@@ -6,16 +6,16 @@ class ProjectForm extends React.Component{
     constructor(props){
         super(props)
 
-        const categories = {
-            1: 'Art',
-            2: 'Comics & Illustrations',
-            3: 'Design & Tech',
-            4: 'Film',
-            5: 'Food & Craft',
-            6: 'Games',
-            7: 'Music',
-            8: 'Publishing',
-        };
+        // const categories = {
+        //     1: 'Art',
+        //     2: 'Comics & Illustrations',
+        //     3: 'Design & Tech',
+        //     4: 'Film',
+        //     5: 'Food & Craft',
+        //     6: 'Games',
+        //     7: 'Music',
+        //     8: 'Publishing',
+        // };
 
         this.state = {
             categoryId: "",

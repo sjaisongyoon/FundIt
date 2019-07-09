@@ -11,15 +11,11 @@ class Api::ProjectsController < ApplicationController
     end
     
     def create 
-        # debugger
         format_end_date = Date.strptime(params[:project][:end_date], '%Y-%m-%d')
         params[:project][:end_date] = format_end_date
         @project = Project.new(project_params)
         @project.author_id = current_user.id
-        # debugger
-
-
-
+ 
         if @project.save
             render :show
         else
