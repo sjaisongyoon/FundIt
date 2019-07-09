@@ -33,7 +33,7 @@ class ProjectShow extends React.Component {
             <div className="project-display">
                 <div className="project-show-background">
                     <div className="project-show-container">
-                        <div className='project-title-desc-container'>
+                        <div className='project-title-desc-container-show'>
                             <h2>{project.title}</h2>
                             <h3>{project.description}</h3>
                         </div>

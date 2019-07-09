@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { numberWithCommas, calcWidth, calcTimeDiff} from './project_calcs'
 
@@ -13,7 +13,7 @@ class ProjectIndexItem extends React.Component{
     render(){
         // debugger;
         const {title, description, authorName, amountPledged, pledgeGoal, 
-            endDate, categoryId, location, photo} = this.props.project;
+            endDate, categoryId, location, photo, id} = this.props.project;
         let ratio = pledgeGoal > 0 ? amountPledged/pledgeGoal : 0;
         let width = calcWidth(ratio, pledgeGoal);
 
@@ -24,12 +24,16 @@ class ProjectIndexItem extends React.Component{
         // debugger;
         return (
             <div className="project-item-container">
-                <div className="img-container">
-                    <img src={photo}></img>
-                </div>
-                <div className="project-short-description">
-                    <h3 className="project-title">{title}</h3>
-                    <p className="project-description">{description}</p>
+                <Link to={`/projects/${id}`}>
+                    <div className="img-container">
+                        <img src={photo}></img>
+                    </div>
+                    <div className="project-short-description">
+                        <h3 className="project-title">{title}</h3>
+                        <p className="project-description">{description}</p>
+                    </div>
+                </Link>
+                <div className="project-author-container">
                     <div className="project-author">by {authorName} </div>
                 </div>
                 

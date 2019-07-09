@@ -12,7 +12,7 @@
     background-color: #FBFBFA;
 }
 
-.project-title-desc-container{
+.project-title-desc-container-show{
     display: flex;
     flex-direction: column;
     padding: 54px 0px;
@@ -21,14 +21,14 @@
     margin: 0;
 }
 
-.project-title-desc-container h2{
+.project-title-desc-container-show h2{
     font-size: 38px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
     margin: 0 0 18px 0;
 }
 
-.project-title-desc-container h3{
+.project-title-desc-container-show h3{
     font-size: 18px;
     text-align: center;
     color: #656969;

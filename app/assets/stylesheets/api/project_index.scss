@@ -47,7 +47,7 @@
 
 .project-short-description{
     padding: 24px 18px 0;
-    height: 180px;
+    height: 160px;
 }
 
 .index-project-details{
@@ -57,6 +57,10 @@
 .project-title{
     font-size: 18px;
     margin: 0 0 6px 0;
+}
+
+.project-title:hover{
+    text-decoration: underline;
 }
 
 .project-description{
@@ -111,4 +115,19 @@
 
 .img-container{
     width: 100%;
+}
+
+.project-item-container a{
+    text-decoration: none;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+}
+
+.project-item-container a:visited{
+    text-decoration: none;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+}
+.project-author{
+    padding: 0px 18px 0;
 }
