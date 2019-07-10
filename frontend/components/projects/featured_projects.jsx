@@ -71,7 +71,7 @@ class FeaturedProjects extends React.Component {
                             <li key="second-li"></li>
                             <li key="third=li"></li>
                         </ul>
-                        <Link className="index-link" to="/"> View More Projects</Link>
+                        <Link className="index-link" to="/projects"> View More Projects</Link>
                     </div>
                 </section>
 
