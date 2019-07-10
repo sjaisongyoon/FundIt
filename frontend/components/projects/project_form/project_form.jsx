@@ -143,7 +143,7 @@ class ProjectForm extends React.Component{
             nextButtonStatus = false;
         } else if (buttonIdx === 2 && (title && description)){
             nextButtonStatus = false;
-        } else if(buttonIdx === 3 && (endDate && campaign && pledgeGoal)){
+        } else if(buttonIdx === 3 && (endDate && campaign && pledgeGoal && this.state.photoFile)){
             nextButtonStatus = false; 
         } else {
             nextButtonStatus = true
@@ -217,7 +217,7 @@ class ProjectForm extends React.Component{
                             <label> <div>Campaign:</div>
                                 <textarea value={campaign} onChange={this.update('campaign')} />
                             </label>
-                            <label id="file-label"> <div>Project Photo</div>
+                            <label id="file-label"> <div>Project Photo (required)</div>
                                 <input type="file" onChange={this.handleFile}/>
                                 <div className={`photo-container ${photoUrl !== 'none' ? '':'hide'}`} style={{backgroundImage: photoUrl}}></div>
                             </label>
