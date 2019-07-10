@@ -41,8 +41,8 @@ class FeaturedProjects extends React.Component {
                 <section className="top-page">
                     <div className="main-feature">
                         <h4>FEATURED PROJECT</h4>
-                        <img src={project1.photo}/>
                         <Link to={`/projects/${project1.id}`}>
+                            <img src={project1.photo}/>
                             <h3 className="featured-title">{project1.title}</h3>
                         </Link>
                         <p>{project1.description}</p>
