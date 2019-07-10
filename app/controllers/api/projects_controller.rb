@@ -9,6 +9,11 @@ class Api::ProjectsController < ApplicationController
     def show
         @project = Project.find(params[:id])
     end
+
+    def featured 
+        @projects = Project.includes(:author).first(10)
+        render :featured_projects
+    end
     
     def create 
         format_end_date = Date.strptime(params[:project][:end_date], '%Y-%m-%d')

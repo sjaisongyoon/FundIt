@@ -8,6 +8,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import Modal from './modal/modal';
 import ProjectShowContainer from './projects/project_show_container';
 import ProjectFormContainer from './projects/project_form/project_form_container';
+import FeaturedProjects from './projects/featured_projects';
 
 
 const App = () => (
@@ -30,6 +31,7 @@ const App = () => (
             <ProtectedRoute path="/projects/start" component={ProjectFormContainer}/>
             <Route path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/projects" component={ProjectIndexContainer}/>
+            <Route path='/' component={FeaturedProjects}/>
         </Switch>
         
         <footer>

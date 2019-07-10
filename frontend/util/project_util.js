@@ -36,3 +36,10 @@ export const deleteProject = (projectId) => {
         url: `api/projects/${projectId}`,
     })
 }
+
+export const fetchFeaturedProjects = () => {
+    return $.ajax({
+        method: 'get',
+        url: 'api/featured'
+    })
+}

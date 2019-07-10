@@ -16,7 +16,6 @@ const mapStateToProps = (state) =>({
 
 const mapDispatchToProps = dispatch =>({
     fetchProjects: () => dispatch(fetchProjects()),
-    // fetchUser: (userId) => dispatch(fetchUser(userId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectIndex)

@@ -1,6 +1,7 @@
 import { RECEIVE_ALL_PROJECTS, 
         REMOVE_PROJECT, 
-        RECEIVE_PROJECT} from '../actions/project_actions';
+        RECEIVE_PROJECT,
+        RECEIVE_FEATURED_PROJECTS} from '../actions/project_actions';
 import { merge } from 'lodash';
 
 const projectsReducer = (state={}, action) => {
@@ -8,6 +9,8 @@ const projectsReducer = (state={}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_PROJECTS:
             return merge({}, state, action.payload.projects);
+        case RECEIVE_FEATURED_PROJECTS:
+            return merge({}, state, action.payload.projects )
         case RECEIVE_PROJECT:
             return merge({}, state, {[action.payload.project.id]: action.payload.project});
         case REMOVE_PROJECT:

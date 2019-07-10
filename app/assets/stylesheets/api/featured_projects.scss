@@ -1,0 +1,67 @@
+$grey-text: #656969;
+$bot-marg: 0 0 18px;
+$soft-black: #282828;
+$featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
+
+
+.top-page{
+    display: flex;
+    max-width: 1366px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 60px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main-feature{
+    width: 55%;
+    margin: 24px 0 0;
+    padding: 30px 60px 0 0;
+}
+
+.main-feature h4{
+    font-size: 13px;
+    color: $grey-text;
+    margin: $bot-marg
+}
+
+.featured-title{
+    color: $soft-black;
+    font-size: 28px;
+    padding: 18px 0 12px;
+}
+
+.main-feature p{
+    font-family: $featured-font;
+    font-size: 18px;
+    margin: 0 0 24px;
+    max-height: 72px;
+    // margin: 0;
+    // display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+.main-feature .auth{
+    font-size: 12px;
+    // padding: 0 0 24px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $grey-text;
+
+}
+
+.main-feature {
+    border-right: .1rem solid #E8E8E8;
+}
+
+.featured-projects-container{
+    padding: 0 0 60px;
+}
+
+.main-feature img{
+    max-width: 600px;
+}
+
