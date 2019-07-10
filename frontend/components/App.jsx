@@ -20,7 +20,7 @@ const App = () => (
                 <Link to={'/projects/start'}>Start A Project</Link>
             </section>
             <section className="nav-container-logo" >
-                <div> FundIt! </div>
+                <Link to="/"><div> FundIt! </div></Link>
             </section>
             <section className="nav-greeting-container"><GreetingContainer/></section>
         </nav>

@@ -85,6 +85,10 @@ class ProjectForm extends React.Component{
     
         if (e.target.id === "next" && this.state.buttonIdx === 3){
             this.props.createProject(formData)
+                .then( action => {
+                    // debugger
+                    return this.props.history.push(`/projects/${action.payload.project.id}`)
+                }) 
         } else if (e.target.id === "prev"){
             this.setState({
                 buttonIdx: this.state.buttonIdx - 1

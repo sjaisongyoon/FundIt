@@ -37,3 +37,8 @@ export const calcTimeDiff = endDate => {
         return { timeleft: `${minutes}`, inc: 'minutes to go' }
     }
 }
+
+export const fundPercent = (pledgeAmount, pledgeGoal) => {
+    if (pledgeGoal === 0) return 0
+    return Math.floor(pledgeAmount/pledgeGoal * 100)
+}

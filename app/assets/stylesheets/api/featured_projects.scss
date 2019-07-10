@@ -3,6 +3,19 @@ $bot-marg: 0 0 18px;
 $soft-black: #282828;
 $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
 
+.top-page a{
+}
+
+.top-page a:hover{
+    text-decoration: underline;
+}
+
+
+.top-page a:visited{
+    text-decoration: none;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+}
 
 .top-page{
     display: flex;
@@ -19,7 +32,11 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
     padding: 30px 60px 0 0;
 }
 
-.main-feature h4{
+.main-feature a{
+    text-decoration: none;
+}
+
+.main-feature h4, .side-gallery h4{
     font-size: 13px;
     color: $grey-text;
     margin: $bot-marg
@@ -65,3 +82,66 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
     max-width: 600px;
 }
 
+.side-gallery{
+    width: 45%;
+    padding: 30px 0 0 60px;
+    margin: 24px 0 0 0;
+}
+
+.side-gallery-project{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.1rem solid #DCDEDD; 
+    padding: 18px 0;
+}
+
+.small-image{
+    width: 40%;
+    padding: 0 24px 0 0;
+}
+
+.small-details{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.small-details h5, .small-details p{
+    margin: 0;
+}
+
+.small-details h5{
+    margin-bottom: 6px;
+    color: #282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.small-details p{
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: $grey-text;
+    font-size: 12px;
+}
+
+.side-gallery h4{
+    margin-bottom: 0;
+}
+
+#fund-ratio{
+    color: #037362;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.side-gallery-container{
+    margin-bottom: 30px;
+}
+
+.side-gallery-container a{
+    text-decoration: none;
+}
+
+.index-link{
+    text-decoration: blue underline;
+}

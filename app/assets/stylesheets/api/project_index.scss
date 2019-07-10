@@ -5,6 +5,7 @@
     grid-gap: 2em;
     max-width: 1366px;
     margin: 0 auto;
+    padding: 0 18px;
     
     @media (max-width: 70em) {
         grid-template-columns: repeat(2, 1fr)
@@ -18,6 +19,7 @@
 
 .project-item-container{
     border: 0.1rem solid #DCDEDD;
+    // width: calc(100% * 4 / 12 )
 }
 
 .index-page {
@@ -109,12 +111,15 @@
 }
 
 .img-container img{
-    object-fit: fill;
-    display: block;
+    object-fit: cover;
+    display: inline-block;
+    max-height: 100%;
+    width: 100%;
 }
 
 .img-container{
     width: 100%;
+    height: 230px;
 }
 
 .project-item-container a{

@@ -14,7 +14,7 @@ class ProjectIndex extends React.Component {
     }
 
     render(){
-        debugger;
+        // debugger;
         return (
             <div className="index-background">
                 <div className="proj-category-header">
