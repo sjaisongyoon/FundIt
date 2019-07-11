@@ -8,3 +8,13 @@ json.users do
         json.extract! @project.author, :name, :biography
     end
 end
+
+# json.rewards @rewards
+
+json.rewards do 
+    @project.rewards.each do |reward|
+        json.set! reward.id do 
+            json.extract! reward, :id, :title, :description, :cost, :ship_loc, :delivery_date, :project_id
+        end
+    end
+end

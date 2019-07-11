@@ -1,4 +1,5 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_USER } from '../actions/session_actions'
+import { RECEIVE_CURRENT_USER, LOGOUT_USER } from '../actions/session_actions';
+import {RECEIVE_PROJECT} from '../actions/project_actions';
 
 const defaultState = { id: null };
 

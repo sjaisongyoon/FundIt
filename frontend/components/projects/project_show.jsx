@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import {calcTimeDiff, numberWithCommas, calcWidth} from './project_calcs';
+import RewardItem from '../rewards/reward_project_index_item';
 
 
 class ProjectShow extends React.Component {
@@ -10,20 +11,23 @@ class ProjectShow extends React.Component {
     }
 
     componentDidMount(){
-        this.props.fetchProject(this.props.match.params.projectId)
+        this.props.fetchProject(this.props.match.params.projectId);
     }
 
     componentDidUpdate(prevProps){
         if (this.props.project.id !== prevProps.project.id){
             this.props.fetchProject(this.props.match.params.projectId)
         }
+        if (this.props.project.amountPledged !== prevProps.project.amountPledged){
+            this.props.fetchProject(this.props.project.id)
+        }
     }
 
     render(){
         const project = this.props.project;
         let ratio = (project.amountPledged / project.pledgeGoal);
-        let width = calcWidth(ratio, project.pledgeGoal)
-
+        let width = calcWidth(ratio, project.pledgeGoal);
+        let rewards = this.props.rewards;
         let pledgeBarStyle = {
             width: width+'%'
         }
@@ -82,6 +86,18 @@ class ProjectShow extends React.Component {
                             <h3>{this.props.author.name}</h3>
                             <br/>
                             <div>{this.props.author.biography}</div>
+                        </div>
+                        <div className="rewards-container">
+                            <ul className="rewards-list">
+                                { !rewards ? null : rewards.map( reward => (
+                                    <li>
+                                        <RewardItem reward={reward} project={project} 
+                                        currentUser={this.props.currentUser}
+                                        updateProject={this.props.updateProject} />
+                                    </li>
+                                ))}
+
+                            </ul>
                         </div>
                     </div>
                 </div>

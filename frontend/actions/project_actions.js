@@ -46,7 +46,7 @@ export const createProject = (project) => dispatch => {
 
 export const updateProject = (project) => dispatch => {
     return APIProject.updateProject(project)
-        .then(payload => dispatch(receiveProjects(payload)))
+        .then(payload => dispatch(receiveProject(payload)))
 };
 
 export const deleteProject = (projectId) => {

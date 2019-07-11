@@ -133,5 +133,44 @@ ActiveRecord::Base.transaction do
     file10 = open('https://fundit-seeds.s3-us-west-1.amazonaws.com/root.jpg')
     project10.photo.attach(io: file10, filename: 'root')
 
+
+    ### Rewards
+    ship_loc = ['Anywhere In The World', 'USA Only', 'Mexico Only', 'Europe']
+    
+    cost = [*10..1000]
+
+
+    def gen_rand_date
+        day = rand(1...30)
+        month = rand(7...13)
+        year = ['2019', '2020'].sample
+        date_str = year + "-" + month.to_s + "-" + day.to_s
+        Date.strptime(date_str, '%Y-%m-%d')
+    end
+    
+    reward1 = Reward.create(title: 'Deluxe Eldervale', 
+                    project_id: 1, 
+                    description: "The portal opens and presents to you a copy of Luke Laurie's epic worker placement fantasy game. Includes every thing in the standard edition and more! 8 elemental minis, 20 metal dragon coins and 100 wooden resources add a fun flair to your game, making it truly the deluxe way to experience Eldervale. Stretch goals will be added when appropriate. Shipping will be charged after the campaign, please see the shipping section.",
+                    delivery_date: gen_rand_date,
+                    ship_loc: ship_loc.sample,
+                    cost: cost.sample
+    )
+    
+    reward2 = Reward.create(title: 'Ultra Eldervale', 
+                    project_id: 1, 
+                    description: "The portal opens and presents to you a copy of Luke Laurie's epic worker placement fantasy game. Includes every thing in the standard, deluxe edition and more! 8 elemental minis, 50 metal dragon coins and 150 wooden resources add a fun flair to your game, making it truly the deluxe way to experience Eldervale. Stretch goals will be added when appropriate. Shipping will be charged after the campaign, please see the shipping section.",
+                    delivery_date: gen_rand_date,
+                    ship_loc: ship_loc.sample,
+                    cost: cost.sample
+    )
+
+    reward3 = Reward.create(title: "Vector Synthesis Book",
+                    project_id: 2,
+                    description: "One copy of the Vector Synthesis book with economy postal delivery anywhere in the world. Please contact me if you need special postal services at an additional rate. European deliveries include 7% German VAT.",
+                    delivery_date: gen_rand_date,
+                    ship_loc: ship_loc.sample,
+                    cost: cost.sample
+    )
+
 end
 
