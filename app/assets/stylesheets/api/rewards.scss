@@ -98,3 +98,16 @@
     text-align: center;
     cursor: pointer;
 }
+
+#submit-pledge:disabled{
+    box-shadow: 0 2px 4px rgba(40,40,40,0.17);
+    opacity: .2;
+    z-index: -1;
+}
+
+#pledge-error {
+    color: red;
+    font-size: 12px;
+    align-items: center;
+    text-align: center;
+}

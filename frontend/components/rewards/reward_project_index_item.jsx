@@ -9,7 +9,7 @@ class RewardProjectIndexItem extends React.Component{
             reward: this.props.reward,
             currentUser: this.props.currentUser,
             clicked: false,
-            pledgeAmount: 0
+            pledgeAmount: 0,
         }
         this.handleClick = this.handleClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,20 +39,19 @@ class RewardProjectIndexItem extends React.Component{
         }
         this.props.updateProject(updatedProjectAttributes)
             .then(()=> this.setState({pledgeAmount: 0, clicked: false}))
-
+    
     }
 
     render(){
         let reward = this.state.reward;
         let project = this.state.project;
         let currentUser = this.state.currentUser;
-        // debugger;
         let date = new Date(reward.deliveryDate);
         let month = month = date.toLocaleString('default', { month: 'long' });
         let day = date.getUTCDate();
         let year = date.getUTCFullYear();
-        let newDate = month + " " + day + " " + year    
-
+        let newDate = month + " " + day + " " + year
+         
         return(
             
             <div className="reward-item-container">
@@ -84,7 +83,9 @@ class RewardProjectIndexItem extends React.Component{
                             <input type="number" value={this.state.pledgeAmount}
                              min={reward.cost} onChange={this.update('pledgeAmount')}/>
                         </div>
-                        <button id="submit-pledge" onClick={this.handleSubmit}>Continue</button>
+                        <button id="submit-pledge" onClick={this.handleSubmit} disabled={(this.state.pledgeAmount >= reward.cost) && currentUser.id ? false : true}>Continue</button>
+                        {currentUser.id ? null : <div id="pledge-error">Must Be Logged In To Make A Pledge</div>}
+                        {this.state.pledgeAmount >= reward.cost ? null : <div id="pledge-error">Pledge Amount Must Be Greater Than {reward.cost}</div>}
                     </form> }
                 
             </div>
