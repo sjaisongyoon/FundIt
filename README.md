@@ -16,11 +16,12 @@ FundIt makes use of a Rails/PostgreSQL backend with React and Redux on the front
 
 ### Functionality of Projects
 The main purpose of FundIt! is to create and showcase a project. In order to effectively do this, all appropriate data and associations had to be properly passed from the back-end to the front-end. Projects, rewards, users, and backings were all separate tables that were connected through the use of a relational database. A Project `has_many` rewards, a reward `has_many` backings, and backings `belong_to` a user. The relationships were made by making a backings a joins table, with foreign keys belonging to a reward and backer. 
-
+<br/>
+Splash Page:
 <p align="center">
   <img width="100%" src="https://i.imgur.com/5Oh2mDc.gif">
 </p>
-
+<br/>
 Project Show Page:
 ![Show](https://i.imgur.com/bArQvb9.png)
 
