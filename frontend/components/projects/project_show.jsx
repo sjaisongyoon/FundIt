@@ -42,6 +42,17 @@ class ProjectShow extends React.Component {
             width: width+'%'
         }
         let timeDiff = calcTimeDiff(project.endDate);
+
+        const categories = {
+            1: 'Art',
+            2: 'Comics & Illustrations',
+            3: 'Design & Tech',
+            4: 'Film',
+            5: 'Food & Craft',
+            6: 'Games',
+            7: 'Music',
+            8: 'Publishing',
+        };
         return (
             <div className="project-display">
                 <div className="project-show-background">
@@ -54,7 +65,10 @@ class ProjectShow extends React.Component {
                             <figure className="media-container">
                                 <img src={project.photo}/>
                                 <div className="project-detail-footer-bar">
-                                    <div>{project.categoryId}</div>
+                                    <div className="category-footnote">
+                                        <img className="locpin" src={window.images.compass} />
+                                        {categories[project.categoryId]}
+                                    </div>
                                     <div>
                                         <img className="locpin" src={window.images.locPin} />
                                         {project.location}
