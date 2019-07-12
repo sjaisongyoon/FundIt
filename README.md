@@ -28,6 +28,10 @@ The backend passed up the data while avoiding N+1 queries. This was done by pref
 
 ![query](https://i.imgur.com/zfRbAqf.png)
 
+In order to extract and display the proper data based on associations, the selectors and reducers were used. This made it possible to pass down the appropriate data from global state as part of a compenent's properties. 
+
+![Selector](https://i.imgur.com/7jJjFlz.png)
+
 ## Technology
 
 ### Backend
