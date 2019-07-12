@@ -4,7 +4,6 @@ class Api::RewardsController < ApplicationController
         @reward = Reward.new(reward_params)
         @reward.project_id = params[:project_id]
         @project = Project.includes(:rewards).find(@reward.project_id)
-        # debugger
         if @reward.save
             render "/api/projects/show"
         else
@@ -13,8 +12,6 @@ class Api::RewardsController < ApplicationController
     end
 
     def index
-        # @project = Project.find(params[:project_id])
-        # @rewards = @project.rewards
         @rewards = Reward.where(project_id: params[:project_id])
     end
 

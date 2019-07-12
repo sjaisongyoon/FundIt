@@ -211,8 +211,6 @@ class ProjectForm extends React.Component{
 
                 </div>
 
-        
-
                 <div className="button-container form">
                     <button id="prev" disabled={buttonIdx > 0 ? false : true} onClick={this.handleSubmit}>
                         <img className={`left-arrow ${buttonIdx > 0 ? '':'hide'} `} src={window.images.leftArrow}/> {prevButtonText[buttonIdx]}
