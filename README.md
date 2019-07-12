@@ -7,7 +7,7 @@ FundIt is a crowd-funding web application heavily based on Kickstarter. Here, in
 
 FundIt makes use of a Rails/PostgreSQL backend with React and Redux on the frontend. This single page web application was designed and developed within a two-week time period. I plan to implement a few more features down the line, such as search, category filtering, and implementation of a rich text editor.
 
-##Features
+## Features
 * Implementation of frontend to backend user authentication using BCrypt
 * Form to create projects made through standard React components. No use of any external libraries other than React for components.
 * Users can back projects, create projects, and browse projects.
