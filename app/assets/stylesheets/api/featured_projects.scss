@@ -198,6 +198,13 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
 
 .middle-page-featured p{
     font-size: 14px;
+    max-height: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
 }
 
 .middle-page-featured span{
