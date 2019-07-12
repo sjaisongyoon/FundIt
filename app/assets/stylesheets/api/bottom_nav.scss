@@ -18,7 +18,7 @@
     // flex-direction: row;
     align-items: stretch;
     justify-content: space-between;
-    padding: 0 60px;
+    // padding: 0 60px;
     margin: 0 auto;
     text-align: center;
 }
@@ -31,6 +31,7 @@
     color: #282828;
     font-weight: 400;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 24px;
 }
 
 .grey-background .bottom-category-nav{
@@ -39,12 +40,15 @@
 }
 
 .bottom-category-nav.top-category-nav{
-    margin: 0;
+    margin: 0 auto;
     border-top: none;
 }
 
 .bottom-category-nav.top-category-nav ul{
-    margin: 0;
+    // margin: 0;
     border-top: none;
     width: 50%;
+    @media (max-width: 1200px) {
+        width: 80%
+    }
 }
