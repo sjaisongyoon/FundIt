@@ -52,6 +52,7 @@ const mapStateToProps = (state, ownProps) => {
         backings: projectBackings(state, ownProps.match.params.projectId)
     }
 };
+```
 
 ## Technology
 
