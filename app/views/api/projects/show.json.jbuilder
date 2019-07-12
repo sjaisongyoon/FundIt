@@ -22,7 +22,7 @@ end
 json.backings do
     @project.backings.each do |backing|
         json.set! backing.id do
-            json.extract! backing, :id, :reward_id, :backing_id
+            json.extract! backing, :id, :reward_id, :backer_id
         end
     end
 end

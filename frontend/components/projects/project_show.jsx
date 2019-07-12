@@ -31,8 +31,8 @@ class ProjectShow extends React.Component {
         let pledgeBarStyle = {
             width: width+'%'
         }
-
         let timeDiff = calcTimeDiff(project.endDate);
+        // debugger;
         return (
             <div className="project-display">
                 <div className="project-show-background">
@@ -58,7 +58,7 @@ class ProjectShow extends React.Component {
                                 </div>
                                 <div className="pledge-amount"> ${numberWithCommas(project.amountPledged)}</div>
                                 <div className="pledge-stat-notes">pledged of ${numberWithCommas(project.pledgeGoal)} goal</div>
-                                <div className="backer-count"> 20 </div>
+                                <div className="backer-count"> {this.props.backings.length} </div>
                                 <div className="pledge-stat-notes"> backers</div>
                                 <div className="day-counter"> {timeDiff.timeleft}</div>
                                 <div className="pledge-stat-notes">{timeDiff.inc} </div>
@@ -89,11 +89,13 @@ class ProjectShow extends React.Component {
                         </div>
                         <div className="rewards-container">
                             <ul className="rewards-list">
-                                { !rewards ? null : rewards.map( reward => (
-                                    <li>
+                                { !rewards ? null : rewards.map( (reward, idx) => (
+                                    <li key={idx}>
                                         <RewardItem reward={reward} project={project} 
                                         currentUser={this.props.currentUser}
-                                        updateProject={this.props.updateProject} />
+                                        updateProject={this.props.updateProject} 
+                                        createBacking={this.props.createBacking}
+                                        fetchProject={this.props.fetchProject}/>
                                     </li>
                                 ))}
 

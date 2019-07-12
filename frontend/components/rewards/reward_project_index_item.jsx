@@ -30,15 +30,18 @@ class RewardProjectIndexItem extends React.Component{
         )
     }
 
-
-
     handleSubmit(e){
         let updatedProjectAttributes = {
             id: this.state.project.id,
             amount_pledged: (this.state.project.amountPledged + parseInt(this.state.pledgeAmount,10))
         }
+
+        let backing ={reward_id: this.state.reward.id, backer_id: this.state.currentUser.id}
+        debugger;
         this.props.updateProject(updatedProjectAttributes)
+            .then(() => this.props.createBacking(backing))
             .then(()=> this.setState({pledgeAmount: 0, clicked: false}))
+            .then(() => this.props.fetchProject(this.props.project.id)) 
     
     }
 

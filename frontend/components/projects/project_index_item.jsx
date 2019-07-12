@@ -25,8 +25,7 @@ class ProjectIndexItem extends React.Component{
         return (
             <div className="project-item-container">
                 <Link to={`/projects/${id}`}>
-                    <div className="img-container">
-                        <img src={photo}></img>
+                    <div className="img-container" style={{backgroundImage: `url(${photo})`}}>
                     </div>
                     <div className="project-short-description">
                         <h3 className="project-title">{title}</h3>
