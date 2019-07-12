@@ -28,6 +28,11 @@ Splash Page:
 Project Show Page:
 ![Show](https://i.imgur.com/bArQvb9.png)
 
+<br/>
+
+Project Creation Form:
+![Imgur](https://i.imgur.com/sK0jtMH.gif)
+
 The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end:
 
 ```ruby
