@@ -19,6 +19,6 @@ The main purpose of FundIt! is to create and showcase a project. In order to eff
 
 To avoid N+1 queries, pre-fetching of data was done on the back end and associations were sent up as their own slice of state, rather than nested under the model's slice of state. 
 
+The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end:
 
-
-The backend passed up the data with the thought of avoiding N+1 queries. 
+![query_image](https://drive.google.com/open?id=14NhZxq3bZxL6WjQMGfNuyYbvX8QSHabK)
