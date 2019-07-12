@@ -21,4 +21,4 @@ To avoid N+1 queries, pre-fetching of data was done on the back end and associat
 
 The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end:
 
-![query_image]([Imgur](https://i.imgur.com/zfRbAqf.png))
+![query](https://i.imgur.com/zfRbAqf.png)
