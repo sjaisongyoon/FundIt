@@ -30,11 +30,26 @@ Project Show Page:
 
 The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end:
 
-![query](https://i.imgur.com/zfRbAqf.png)
+```ruby
+    def create
+        @reward = Reward.new(reward_params)
+        @reward.project_id = params[:project_id]
+        @project = Project.includes(:rewards).find(@reward.project_id)
+        if @reward.save
+            render "/api/projects/show"
+        else
+            render json: @reward.errors.full_messages, status: 404
+        end
+    end
+
+    def index
+        @rewards = Reward.where(project_id: params[:project_id])
+    end
+```
 
 In order to extract and display the proper data based on associations, the selectors and reducers were used. This made it possible to pass down the appropriate data from global state as part of a compenent's properties. 
 
-```
+```js
 // project show container
 const projectBackings = (state, projectId) => {
     return Object.values(state.entities.backings).filter(backing =>
