@@ -11,7 +11,6 @@ class ProjectIndexItem extends React.Component{
 
 
     render(){
-        // debugger;
         const {title, description, authorName, amountPledged, pledgeGoal, 
             endDate, categoryId, location, photo, id} = this.props.project;
         let ratio = pledgeGoal > 0 ? amountPledged/pledgeGoal : 0;
@@ -21,7 +20,6 @@ class ProjectIndexItem extends React.Component{
             width: width + '%'
         }
         let timeDiff = calcTimeDiff(endDate);
-        // debugger;
         return (
             <div className="project-item-container">
                 <Link to={`/projects/${id}`}>

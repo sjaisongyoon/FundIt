@@ -3,6 +3,8 @@ import { fetchFeaturedProjects } from '../../actions/project_actions';
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {fundPercent} from './project_calcs';
+import {CategoryFooter} from '../categories/category_footer';
+import {CategoryHeader} from '../categories/category_header';
 
 const featuredProjectsWithAuthors = state => {
     return Object.values(state.entities.projects).map((project) => {
@@ -37,7 +39,9 @@ class FeaturedProjects extends React.Component {
         const projects = this.props.featuredProjectsWithAuthors;
 
         return(
+            
             <div className="featured-projects-container">
+                <CategoryHeader />
                 <section className="top-page">
                     <div className="main-feature">
                         <h4>FEATURED PROJECT</h4>
@@ -65,15 +69,34 @@ class FeaturedProjects extends React.Component {
                                         </div> 
                                 </li>
                             ))}
-                            <li key="first-li">
 
-                            </li>
-                            <li key="second-li"></li>
-                            <li key="third=li"></li>
                         </ul>
                         <Link className="index-link" to="/projects"> View More Projects</Link>
                     </div>
                 </section>
+                <div className="border-sep"></div>
+
+                <section className="middle-page-featured">
+                    <h4>FRESH FAVORITES</h4>
+                    <ul>
+                        {projects.slice(4,8).map((rowProject,idx) => (
+                            <li key={idx} >
+                                <div id="fresh-img">
+                                    <Link to={`projects/${rowProject.id}`} style={{backgroundImage: `url(${rowProject.photo})`}} className="image-link"></Link>
+                                </div>
+                                <div id="fresh-details">
+                                    <Link id="title-link" to={`projects/${rowProject.id}`}><h5>{rowProject.title}</h5></Link>
+                                    <div>
+                                        <p>{rowProject.description}</p>
+                                        <span>By {rowProject.authorName}</span>
+                                    </div>
+                                </div> 
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+                <CategoryFooter/>
 
             </div>
         )

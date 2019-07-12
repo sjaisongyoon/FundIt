@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
 import ProjectIndexItem from './project_index_item';
+import {CategoryFooter} from '../categories/category_footer'
 
 
 class ProjectIndex extends React.Component {
@@ -32,6 +33,7 @@ class ProjectIndex extends React.Component {
                         ))}
                     </div>
                 </section>
+                <CategoryFooter/>
             </div>
         )
 

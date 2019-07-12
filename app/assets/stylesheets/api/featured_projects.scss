@@ -6,12 +6,13 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
 .top-page a{
 }
 
-.top-page a:hover{
+.top-page a:hover, .middle-page-featured a:hover{
     text-decoration: underline;
+    color: #282828;
 }
 
 
-.top-page a:visited{
+.top-page a:visited, .middle-page-featured a:visited{
     text-decoration: none;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #282828;
@@ -22,7 +23,7 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
     max-width: 1366px;
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 60px;
+    padding: 0 60px 60px 60px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -32,11 +33,11 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
     padding: 30px 60px 0 0;
 }
 
-.main-feature a{
-    text-decoration: none;
+.main-feature a, .middle-page-featured a {
+    text-decoration: none; 
 }
 
-.main-feature h4, .side-gallery h4{
+.main-feature h4, .side-gallery h4, .middle-page-featured h4{
     font-size: 13px;
     color: $grey-text;
     margin: $bot-marg
@@ -65,6 +66,7 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
     // padding: 0 0 24px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: $grey-text;
+    
 
 }
 
@@ -141,5 +143,71 @@ $featured-font: "Cooper Light", Georgia, Times, "Times New Roman", serif;
 }
 
 .index-link{
-    text-decoration: blue underline;
+    text-decoration: none;
+}
+
+.middle-page-featured{
+    padding: 0 60px;
+    color: #282828;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.middle-page-featured ul{
+    display: flex;
+    display: row;
+    padding-top: 0;
+    margin: 0 auto;
+    // border-top: 0.1rem solid #DCDEDD;
+    max-width: 1366px;
+    justify-content: space-evenly;
+}
+
+.middle-page-featured li{
+    width: 100%;
+    padding: 0 18px;
+}
+
+.border-sep{
+    border-top: 0.1rem solid #DCDEDD;
+
+}
+
+.image-link{
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    display: block;
+}
+
+.middle-page-featured h4{
+    padding: 60px 60px 0 78px;
+    max-width: 1366px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+
+}
+
+.middle-page-featured h5{
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 18px 0 12px;
+    margin: 0;
+}
+
+.middle-page-featured p{
+    font-size: 14px;
+}
+
+.middle-page-featured span{
+    font-size: 12px;
+}
+
+#title-link{
+    color: #282828;
+}
+
+#fresh-img:hover + #fresh-details #title-link{
+    text-decoration: underline;
 }

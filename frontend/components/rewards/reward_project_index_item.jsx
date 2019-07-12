@@ -1,4 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state, ownProps) =>{
+    return({
+    backings: Object.values(state.entities.backings).filter(backing =>
+        ownProps.reward.id === backing.rewardId),
+    currentUserBacker: Object.values(state.entities.backings).every( backing => 
+        ownProps.currentUser.id !== backing.backerId)
+    })
+};
 
 class RewardProjectIndexItem extends React.Component{
     
@@ -37,7 +47,7 @@ class RewardProjectIndexItem extends React.Component{
         }
 
         let backing ={reward_id: this.state.reward.id, backer_id: this.state.currentUser.id}
-        debugger;
+        // debugger;
         this.props.updateProject(updatedProjectAttributes)
             .then(() => this.props.createBacking(backing))
             .then(()=> this.setState({pledgeAmount: 0, clicked: false}))
@@ -78,7 +88,11 @@ class RewardProjectIndexItem extends React.Component{
                         <div className="detail-content">{reward.shipLoc}</div>
                     </div>
                 </div>
-                { !this.state.clicked ? null : 
+                <div className="backings-rewards-count">
+                    {this.props.backings.length} backers
+                </div>
+                {!this.props.currentUserBacker ? <div id="pledge-error">You Are Backing This Project</div> : null}
+                { !this.state.clicked || !this.props.currentUserBacker ? null : 
                     <form className="pledge-form-container">
                         <div className="container-name"> Pledge Amount </div>
                         <div className="pledge-value">
@@ -97,4 +111,6 @@ class RewardProjectIndexItem extends React.Component{
     }
 }
 
-export default RewardProjectIndexItem;
+export default connect(mapStateToProps, null)(RewardProjectIndexItem)
+
+// export default RewardProjectIndexItem;

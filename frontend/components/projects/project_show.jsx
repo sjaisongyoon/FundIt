@@ -2,12 +2,14 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import {calcTimeDiff, numberWithCommas, calcWidth} from './project_calcs';
 import RewardItem from '../rewards/reward_project_index_item';
+import {CategoryFooter} from '../categories/category_footer'
 
 
 class ProjectShow extends React.Component {
 
     constructor(props){
         super(props)
+        this.scrollTo = this.scrollTo.bind(this)
     }
 
     componentDidMount(){
@@ -23,6 +25,14 @@ class ProjectShow extends React.Component {
         }
     }
 
+    scrollTo(e){
+        e.preventDefault();
+        let element = document.getElementById('rewards-container')
+        element.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
     render(){
         const project = this.props.project;
         let ratio = (project.amountPledged / project.pledgeGoal);
@@ -32,7 +42,6 @@ class ProjectShow extends React.Component {
             width: width+'%'
         }
         let timeDiff = calcTimeDiff(project.endDate);
-        // debugger;
         return (
             <div className="project-display">
                 <div className="project-show-background">
@@ -63,7 +72,9 @@ class ProjectShow extends React.Component {
                                 <div className="day-counter"> {timeDiff.timeleft}</div>
                                 <div className="pledge-stat-notes">{timeDiff.inc} </div>
                                 <br/>
-                                <button className="back-proj-button">Back This Project</button>
+                                <button className="back-proj-button"
+                                    onClick={this.scrollTo}>
+                                    Back This Project</button>
 
                             </div>
                         </div>
@@ -87,7 +98,7 @@ class ProjectShow extends React.Component {
                             <br/>
                             <div>{this.props.author.biography}</div>
                         </div>
-                        <div className="rewards-container">
+                        <div className="rewards-container" id ="rewards-container">
                             <ul className="rewards-list">
                                 { !rewards ? null : rewards.map( (reward, idx) => (
                                     <li key={idx}>
@@ -104,7 +115,7 @@ class ProjectShow extends React.Component {
                     </div>
                 </div>
 
-
+                <CategoryFooter/>
             </div>
         )
     }

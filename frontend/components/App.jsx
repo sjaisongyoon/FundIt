@@ -34,7 +34,7 @@ const App = () => (
             <Route path='/' component={FeaturedProjects}/>
         </Switch>
         
-        <footer>
+        {/* <footer>
             <nav className="bottom-category-nav auth-text">
                 <ul>
                     <li>Category 1</li>
@@ -44,7 +44,7 @@ const App = () => (
                     <li>Category 5</li>
                 </ul>
             </nav>
-        </footer>
+        </footer> */}
     </div>
 );
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import { CategoryFooter } from '../categories/category_footer';
 
 
 const SessionFooterText = ({path}) => {
@@ -91,26 +92,29 @@ class SessionForm extends React.Component {
         const formType = this.props.formType;
 
         return(
-            <div className="grey-background">
-                <div className="login-signup" >
-                    <div className="auth-form-container">
-                        {formType === 'Login' ? <label>Log In</label> : <label>Sign Up!</label>}
+            <div>
+                <div className="grey-background">
+                    <div className="login-signup" >
+                        <div className="auth-form-container">
+                            {formType === 'Login' ? <label>Log In</label> : <label>Sign Up!</label>}
 
-                        <form className="login-signup-form" onSubmit={this.handleSubmit}>
-                            {path ==='/login' ? null : <input type="text" value={this.state.name} placeholder="Name" onChange={this.update('name')}/>}
-                            <input id='email' type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
-                            <input id='password' type="password" value={this.state.password} placeholder="Password" onChange={this.update('password')}/>
-                            <input type="submit" value={formType} className="submit-button"/>
-                        </form>
+                            <form className="login-signup-form" onSubmit={this.handleSubmit}>
+                                {path ==='/login' ? null : <input type="text" value={this.state.name} placeholder="Name" onChange={this.update('name')}/>}
+                                <input id='email' type="email" value={this.state.email} placeholder="Email" onChange={this.update('email')}/>
+                                <input id='password' type="password" value={this.state.password} placeholder="Password" onChange={this.update('password')}/>
+                                <input type="submit" value={formType} className="submit-button"/>
+                            </form>
 
-                        {formType === 'Login' ? <div className="demo-button-container">
-                            <input type="submit" value="Demo Login" className="submit-button" id="demo" onClick={this.handleDemoSubmit}/>
-                            </div> : null}
-                        <div className="errors-container"><div className="auth-errors">{this.props.errors[0]}</div></div>
+                            {formType === 'Login' ? <div className="demo-button-container">
+                                <input type="submit" value="Demo Login" className="submit-button" id="demo" onClick={this.handleDemoSubmit}/>
+                                </div> : null}
+                            <div className="errors-container"><div className="auth-errors">{this.props.errors[0]}</div></div>
+                        </div>
+                        <div className="auth-form-footer auth-text">
+                            <SessionFooterText path={path}/>
+                        </div>
                     </div>
-                    <div className="auth-form-footer auth-text">
-                        <SessionFooterText path={path}/>
-                    </div>
+                    <CategoryFooter/>
                 </div>
             </div>
         )
