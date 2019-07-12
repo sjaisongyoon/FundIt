@@ -34,7 +34,23 @@ The backend passed up the data while avoiding N+1 queries. This was done by pref
 
 In order to extract and display the proper data based on associations, the selectors and reducers were used. This made it possible to pass down the appropriate data from global state as part of a compenent's properties. 
 
-![Selector](https://i.imgur.com/7jJjFlz.png)
+```// project show container
+const projectBackings = (state, projectId) => {
+    return Object.values(state.entities.backings).filter(backing =>
+        state.entities.rewards[backing.rewardId].projectId == projectId
+    );
+    
+}
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        project: state.entities.projects[ownProps.match.params.projectId] || {},
+        author: state.entities.users.author || {},
+        currentUser: state.entities.users[state.session.id] || {},
+        rewards: Object.values(state.entities.rewards).filter(reward => reward.projectId == ownProps.match.params.projectId),
+        backings: projectBackings(state, ownProps.match.params.projectId)
+    }
+};```
 
 ## Technology
 
