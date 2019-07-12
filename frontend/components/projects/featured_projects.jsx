@@ -6,7 +6,7 @@ import {fundPercent} from './project_calcs';
 
 const featuredProjectsWithAuthors = state => {
     return Object.values(state.entities.projects).map((project) => {
-        let author = state.entities.users[project.authorId];
+        let author = state.entities.users[project.authorId] || {};
         return Object.assign({}, project, { authorName: author.name })
     });
 
