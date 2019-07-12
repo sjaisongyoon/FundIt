@@ -18,3 +18,12 @@ json.rewards do
         end
     end
 end
+
+json.backings do
+    @project.backings.each do |backing|
+        json.set! backing.id do
+            json.extract! backing, :id, :reward_id, :backing_id
+        end
+    end
+end
+

@@ -30,6 +30,10 @@ class Project < ApplicationRecord
         foreign_key: :project_id,
         class_name: 'Reward'
 
+    has_many :backings,
+        through: :rewards,
+        source: :backings
+
     has_one_attached :photo
 
     # belongs_to :category,

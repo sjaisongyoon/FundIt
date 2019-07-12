@@ -30,6 +30,18 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: 'Project'
   
+  has_many :backings,
+    foreign_key: :backer_id,
+    class_name: 'Backing'
+  
+  has_many :rewards, 
+    through: :backings,
+    source: :reward
+  
+  has_many :backed_projects,
+    through: :rewards,
+    source: :project
+  
   # model specific methods
   
   def password=(password)
