@@ -31,6 +31,7 @@ Project Show Page:
 <br/>
 
 Project Creation Form:
+<br/>
 ![Imgur](https://i.imgur.com/hcusyg4.gif)
 
 The backend passed up the data while avoiding N+1 queries. This was done by prefetching the required data prior to sending the response to the front-end:
