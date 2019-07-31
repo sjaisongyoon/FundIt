@@ -1,6 +1,6 @@
 # README
 
-Link To Live App: [FundIt!](https://fundit-aa-sf-may-19.herokuapp.com/#/login)
+Link To Live App: [FundIt!](https://fundit-aa-sf-may-19.herokuapp.com/#/)
 
 
 FundIt! is a crowd-funding web application heavily based on Kickstarter. Here, innovators can share their work and raise the capital needed to launch their products. Users can back projects based on various reward levels. 
