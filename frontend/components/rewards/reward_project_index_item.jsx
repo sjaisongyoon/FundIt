@@ -53,7 +53,11 @@ class RewardProjectIndexItem extends React.Component{
             .then(() => this.props.createBacking(backing))
             .then(()=> this.setState({pledgeAmount: 0, clicked: false}))
             .then(() => this.props.fetchProject(this.props.project.id)) 
-    
+
+        let element = document.getElementsByClassName('project-display')[0]
+        element.scrollIntoView({
+            behavior: "smooth"
+        });
     }
 
     render(){
