@@ -22,6 +22,12 @@ class Api::ProjectsController < ApplicationController
         @project.author_id = current_user.id
  
         if @project.save
+            Reward.create(
+                title: 'Make A Pledge Without a Reward',
+                project_id: @project.id,
+                description: '',
+                cost: 0
+            )
             render :show
         else
             render json: @project.errors.full_messages, status: 404

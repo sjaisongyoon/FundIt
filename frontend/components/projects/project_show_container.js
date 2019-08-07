@@ -4,17 +4,16 @@ import { fetchRewards } from '../../actions/reward_actions';
 import {createBacking} from '../../actions/backing_actions';
 import ProjectShow from './project_show';
 
+// project show container
 const projectBackings = (state, projectId) => {
-    // debugger;
     return Object.values(state.entities.backings).filter(backing =>
         state.entities.rewards[backing.rewardId].projectId == projectId
-        // let rewards = Object.values(state.entities.rewards).filter(reward => reward.id === backing.rewardId)
-        // rewards[0].projectId === projectId
     );
     
 }
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger;
     return {
         project: state.entities.projects[ownProps.match.params.projectId] || {},
         author: state.entities.users.author || {},
@@ -27,8 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     fetchProject: projectId => dispatch(fetchProject(projectId)),
     updateProject: project => dispatch(updateProject(project)),
-    createBacking: backing => dispatch(createBacking(backing))
-
+    createBacking: backing => dispatch(createBacking(backing)),
 });
 
 

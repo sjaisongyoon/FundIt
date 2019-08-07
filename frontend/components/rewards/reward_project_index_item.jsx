@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) =>{
+    let backings = Object.values(state.entities.backings).filter(backing =>
+        ownProps.reward.id === backing.rewardId)
     return({
-    backings: Object.values(state.entities.backings).filter(backing =>
-        ownProps.reward.id === backing.rewardId),
-    currentUserBacker: Object.values(state.entities.backings).every( backing => 
-        ownProps.currentUser.id !== backing.backerId)
+        backings,
+        currentUserIsNotBacker: backings.every( backing => 
+         ownProps.currentUser.id !== backing.backerId)
     })
 };
 
@@ -64,6 +65,7 @@ class RewardProjectIndexItem extends React.Component{
         let day = date.getUTCDate();
         let year = date.getUTCFullYear();
         let newDate = month + " " + day + " " + year
+        // debugger;
          
         return(
             
@@ -91,8 +93,8 @@ class RewardProjectIndexItem extends React.Component{
                 <div className="backings-rewards-count">
                     {this.props.backings.length} backers
                 </div>
-                {!this.props.currentUserBacker ? <div id="pledge-error">You Are Backing This Project</div> : null}
-                { !this.state.clicked || !this.props.currentUserBacker ? null : 
+                {!this.props.currentUserIsNotBacker ? <div id="pledge-error">You Have Alreday Purchased This Reward</div> : null}
+                { !this.state.clicked || !this.props.currentUserIsNotBacker ? null : 
                     <form className="pledge-form-container">
                         <div className="container-name"> Pledge Amount </div>
                         <div className="pledge-value">
