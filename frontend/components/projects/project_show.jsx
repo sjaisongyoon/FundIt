@@ -53,6 +53,7 @@ class ProjectShow extends React.Component {
             7: 'Music',
             8: 'Publishing',
         };
+        // debugger;
         return (
             <div className="project-display">
                 <div className="project-show-background">
@@ -120,7 +121,7 @@ class ProjectShow extends React.Component {
                                         currentUser={this.props.currentUser}
                                         updateProject={this.props.updateProject} 
                                         createBacking={this.props.createBacking}
-                                        fetchProject={this.props.fetchProject}/>
+                                        fetchProject={this.props.fetchProject} />
                                     </li>
                                 ))}
 
