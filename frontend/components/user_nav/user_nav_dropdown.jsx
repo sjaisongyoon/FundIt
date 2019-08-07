@@ -1,6 +1,8 @@
 import React from 'react';
 import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
+
 
 
 class UserNavDropdown extends React.Component {
@@ -11,7 +13,10 @@ class UserNavDropdown extends React.Component {
 
     handleClick(e){
         e.preventDefault();
-        this.props.logout().then(this.props.closeModal);
+        // debugger
+        this.props.logout()
+            .then(this.props.closeModal)
+        this.props.history.push('/login');
     }
 
     render(){
@@ -38,4 +43,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserNavDropdown);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserNavDropdown));
