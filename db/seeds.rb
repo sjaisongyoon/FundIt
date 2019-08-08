@@ -50,7 +50,7 @@ ActiveRecord::Base.transaction do
         attributes[:amount_pledged] = attributes[:pledge_goal]*(rand(0...101)/100.0)
         day = rand(1...30)
         month = rand(7...13)
-        year = ['2019', '2020'].sample
+        year = ['2020', '2021'].sample
         date_str = year + "-" + month.to_s + "-" + day.to_s
         attributes[:end_date] = Date.strptime(date_str, '%Y-%m-%d')
         attributes[:location] = ["Europe", "Asia", "Africa", "North America",
