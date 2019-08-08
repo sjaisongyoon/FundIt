@@ -45,11 +45,6 @@ class RewardProjectIndexItem extends React.Component{
         }
         
         let backing ={reward_id: this.props.reward.id, backer_id: this.props.currentUser.id}
-        // debugger;
-        // this.props.updateProject(updatedProjectAttributes)
-        //     .then(() => this.props.createBacking(backing))
-        //     .then(()=> this.setState({pledgeAmount: 0, clicked: false}))
-        // debugger
 
         this.props.createBacking(backing)
             .then( () => this.props.updateProject(updatedProjectAttributes))

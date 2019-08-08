@@ -32,6 +32,8 @@ class Api::ProjectsController < ApplicationController
         
         @project = Project.find_by(id: params[:id])
 
+        debugger
+
         if current_user.id == @project.author_id
             if @project.update_attributes(project_params)
                 render :show
@@ -39,7 +41,7 @@ class Api::ProjectsController < ApplicationController
                 render json: @project.errors.full_messages, status: 404
             end
         else 
-            if @project.update_attributes(pledge_update)
+            if @project.update_attribute(:amount_pledged, pledge_update[:amount_pledged])
                 render :show
             else
                 render json: @project.errors.full_messages, status: 404
