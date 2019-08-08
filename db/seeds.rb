@@ -11,6 +11,24 @@ require 'open-uri'
 ActiveRecord::Base.transaction do
     User.destroy_all
     Project.destroy_all
+    Category.destroy_all
+    Reward.destroy_all
+    Backing.destroy_all
+
+    categories = ['Art',
+        'Comics & Illustrations',
+        'Design & Tech',
+        'Film',
+        'Food & Craft',
+        'Games',
+        'Music',
+        'Publishing'
+    ];
+
+    categories.each do |category| 
+        Category.create(category_name: category)
+    end
+    
 
     password = 'password'
     #User
