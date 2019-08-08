@@ -32,8 +32,6 @@ class Api::ProjectsController < ApplicationController
         
         @project = Project.find_by(id: params[:id])
 
-        debugger
-
         if current_user.id == @project.author_id
             if @project.update_attributes(project_params)
                 render :show
