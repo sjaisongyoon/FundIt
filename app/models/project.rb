@@ -36,9 +36,9 @@ class Project < ApplicationRecord
 
     has_one_attached :photo
 
-    # belongs_to :category,
-    #     primary_key: :id,
-    #     foreign_key: :category_id,
-    #     class_name: 'Category'
+    belongs_to :category,
+        primary_key: :id,
+        foreign_key: :category_id,
+        class_name: 'Category'
 
 end
