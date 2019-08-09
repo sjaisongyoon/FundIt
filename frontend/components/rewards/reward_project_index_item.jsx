@@ -39,6 +39,8 @@ class RewardProjectIndexItem extends React.Component{
     }
 
     handleSubmit(e){
+        e.preventDefault();
+        
         let updatedProjectAttributes = {
             id: this.props.project.id,
             amount_pledged: (this.props.project.amountPledged + parseInt(this.state.pledgeAmount,10))
