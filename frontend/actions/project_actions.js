@@ -1,16 +1,12 @@
 import * as APIProject from '../util/project_util';
-export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
+export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_FEATURED_PROJECTS = 'RECEIVE_FEATURED_PROJECTS';
+import * as APICategory from '../util/category_util';
 
 export const receiveProjects = (payload) => ({
-    type: RECEIVE_ALL_PROJECTS,
-    payload
-});
-
-export const receiveFeaturedProjects = (payload) =>({
-    type: RECEIVE_FEATURED_PROJECTS,
+    type: RECEIVE_PROJECTS,
     payload
 });
 
@@ -26,7 +22,7 @@ const removeProject = (projectId) => ({
 
 export const fetchFeaturedProjects = () => dispatch => {
     return APIProject.fetchFeaturedProjects()
-        .then(payload => dispatch(receiveFeaturedProjects(payload)))
+        .then(payload => dispatch(receiveProjects(payload)))
 }
 
 export const fetchProjects = () => dispatch => {
@@ -52,4 +48,9 @@ export const updateProject = (project) => dispatch => {
 export const deleteProject = (projectId) => {
     return APIProject.deleteProject(projectId)
         .then(project => removeProject(project.id))
+};
+
+export const fetchCategoryProjects = (categoryId) => {
+    return APICategory.fetchCategoryProjects(categoryId)
+        .then(payload =>  dispatch(receiveProjects(payload)))
 };

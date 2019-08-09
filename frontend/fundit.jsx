@@ -4,6 +4,7 @@ import Root from './components/Root';
 import configureStore from './store/store';
 import {fetchProjects} from './actions/project_actions';
 import {fetchUser} from './actions/user_actions';
+import {fetchCategoryProjects} from './actions/project_actions';
 
 
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.fetchProjects = fetchProjects;
     window.fetchUser = fetchUser;
+    window.fetchCategoryProjects = fetchCategoryProjects;
 
     ReactDOM.render(<Root store={store}/>, root);
 })
