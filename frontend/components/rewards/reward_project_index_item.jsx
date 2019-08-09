@@ -96,14 +96,14 @@ class RewardProjectIndexItem extends React.Component{
                 </div>
                 {!this.props.currentUserIsNotBacker ? <div id="pledge-error">You Have Alreday Purchased This Reward</div> : null}
                 { !this.state.clicked || !this.props.currentUserIsNotBacker ? null : 
-                    <form className="pledge-form-container">
+                    <form className="pledge-form-container" onSubmit={this.handleSubmit}>
                         <div className="container-name"> Pledge Amount </div>
                         <div className="pledge-value">
                             <div className="dollar-sign">$</div>
                             <input type="number" value={this.state.pledgeAmount}
                              min={reward.cost} onChange={this.update('pledgeAmount')}/>
                         </div>
-                        <button id="submit-pledge" onClick={this.handleSubmit} disabled={(this.state.pledgeAmount >= reward.cost) && currentUser.id ? false : true}>Continue</button>
+                        <button id="submit-pledge" disabled={(this.state.pledgeAmount >= reward.cost) && currentUser.id ? false : true}>Continue</button>
                         {currentUser.id ? null : <div id="pledge-error">Must Be Logged In To Make A Pledge</div>}
                         {this.state.pledgeAmount >= reward.cost ? null : <div id="pledge-error">Pledge Amount Must Be Greater Than {reward.cost}</div>}
                     </form> }
