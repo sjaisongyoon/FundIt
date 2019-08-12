@@ -10,13 +10,15 @@ const categoryProjects = (state, categoryId) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-    let projects = categoryProjects(state, ownProps.match.params.id) 
+    let projects = categoryProjects(state, ownProps.match.params.categoryId) 
     let projectsWithAuthors = projects.map(project => {
         let author = state.entities.users[project.authorId];
         return Object.assign({}, project, {authorName: author.name})
     })
+    // debugger;
     return {
-        projects: projectsWithAuthors
+        projects: projectsWithAuthors,
+        category: state.entities.categories[ownProps.match.params.categoryId] || {}
     }
 }
 
