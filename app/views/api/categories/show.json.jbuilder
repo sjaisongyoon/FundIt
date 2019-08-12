@@ -13,3 +13,8 @@ json.users do
         end
     end
 end
+
+json.set! @category.id do 
+    json.extract! @category, :id, :category_name
+end
+

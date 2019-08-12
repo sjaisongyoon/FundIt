@@ -1,7 +1,7 @@
-import { RECEIVE_PROJECTS, 
+import {RECEIVE_PROJECTS, 
         REMOVE_PROJECT, 
         RECEIVE_PROJECT,
-        RECEIVE_FEATURED_PROJECTS} from '../actions/project_actions';
+        } from '../actions/project_actions';
 import { merge } from 'lodash';
 
 const projectsReducer = (state={}, action) => {

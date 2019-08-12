@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import {fetchProjects} from './actions/project_actions';
 import {fetchUser} from './actions/user_actions';
 import {fetchCategoryProjects} from './actions/project_actions';
+import {fetchCategories} from './actions/category_actions';
 
 
 
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.fetchProjects = fetchProjects;
     window.fetchUser = fetchUser;
-    window.fetchCategoryProjects = fetchCategoryProjects;
+    window.fetchCategories = fetchCategories;
 
     ReactDOM.render(<Root store={store}/>, root);
 })

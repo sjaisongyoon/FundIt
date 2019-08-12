@@ -37,7 +37,6 @@ class FeaturedProjects extends React.Component {
         const [project1, project2, project3, project4, project5, project6,
             project7, project8, project9, project10] = this.props.featuredProjectsWithAuthors;
         const projects = this.props.featuredProjectsWithAuthors;
-
         return(
             
             <div className="featured-projects-container">

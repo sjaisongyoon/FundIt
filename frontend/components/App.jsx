@@ -9,7 +9,7 @@ import Modal from './modal/modal';
 import ProjectShowContainer from './projects/project_show_container';
 import ProjectFormContainer from './projects/project_form/project_form_container';
 import FeaturedProjects from './projects/featured_projects';
-
+import ProjectCategoryIndexContainer from './categories/project_categories/project_category_index_container'
 
 const App = () => (
     <div>
@@ -31,6 +31,7 @@ const App = () => (
             <ProtectedRoute path="/projects/start" component={ProjectFormContainer}/>
             <Route path="/projects/:projectId" component={ProjectShowContainer}/>
             <Route exact path="/projects" component={ProjectIndexContainer}/>
+            <Route path="/categories/:categoryId" component={ProjectCategoryIndexContainer}/>
             <Route path='/' component={FeaturedProjects}/>
         </Switch>
         

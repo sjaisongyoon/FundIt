@@ -50,7 +50,7 @@ export const deleteProject = (projectId) => {
         .then(project => removeProject(project.id))
 };
 
-export const fetchCategoryProjects = (categoryId) => {
-    return APICategory.fetchCategoryProjects(categoryId)
-        .then(payload =>  dispatch(receiveProjects(payload)))
+export const fetchCategoryProjects = (categoryId) => dispatch => {
+    return APICategory.fetchCategory(categoryId)
+        .then(payload => dispatch(receiveProjects(payload)))
 };

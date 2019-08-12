@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :projects, only: [:create, :destroy, :index, :show, :update] do 
       resources :rewards, only: [:create, :index]
     end
-    resources :categories, only: [:show]
+    resources :categories, only: [:show, :index]
     resources :backings, only: [:create, :show]
     get '/featured', to: 'projects#featured', as: :featured_projects
   end
