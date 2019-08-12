@@ -8,19 +8,21 @@ class ProjectCategoryIndex extends React.Component {
     }
 
     componentDidMount(){
-        debugger;
         this.props.fetchCategoryProjects(this.props.match.params.categoryId)
     }
 
     render(){
         if (!this.props.projects) return <div></div>
-
+        // debugger;
         return(
-            <section>
-                <article>
-                    Hi
-                </article>
-            </section>
+            <div>
+                <section className="category-desc-container">
+                    <article className="category-desc">
+                        <h3>{this.props.category.categoryName}</h3>
+                        <p></p>
+                    </article>
+                </section>
+            </div>
         )
     }
 }
