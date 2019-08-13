@@ -24,13 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
-    
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
-
-    window.fetchProjects = fetchProjects;
-    window.fetchUser = fetchUser;
-    window.fetchCategories = fetchCategories;
-
     ReactDOM.render(<Root store={store}/>, root);
 })

@@ -47,9 +47,10 @@ ActiveRecord::Base.transaction do
 
     names = ['John', 'Peter', 'Paul', 'David', 'Victoria', 'Chet', 'Lanre', 'Anacleto', 'Jacob']
     emails = names.map {|name| name + "@test.com" }
+    biography = "An innovate creator from the Bay Area."
 
     (0...names.length).each do |i|
-        User.create(name: names[i], email: emails[i], password: password )
+        User.create(name: names[i], email: emails[i], password: password, biography: biography)
     end
     # Art Projects
     ids = User.all.ids
