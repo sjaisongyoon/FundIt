@@ -137,3 +137,42 @@
     color: #656969;
     font-weight: 500;
 }
+
+.proj-categories {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.category-filter-name{
+    background: #E0E0E0;
+    margin-left: 5px;
+    padding: 0 5px;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    border: 0.1rem solid #DCDEDD;
+
+}
+
+.select-arrow{
+    width: 20px;
+}
+
+.cat-filter-list-container{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    border: 1px solid black;
+    background: #E0E0E0;
+    padding: 20px;
+}
+
+.cat-filter-list-container.open{
+    display: block;
+}
+
+.cat-filter-list-container li{
+    cursor: pointer;
+}

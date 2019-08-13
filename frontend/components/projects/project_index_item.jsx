@@ -20,6 +20,7 @@ class ProjectIndexItem extends React.Component{
             width: width + '%'
         }
         let timeDiff = calcTimeDiff(endDate);
+        if (!category) return <div></div>
         return (
             <div className="project-item-container">
                 <Link to={`/projects/${id}`}>
