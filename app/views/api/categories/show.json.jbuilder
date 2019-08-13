@@ -15,6 +15,6 @@ json.users do
 end
 
 json.set! @category.id do 
-    json.extract! @category, :id, :category_name
+    json.extract! @category, :id, :category_name, :description
 end
 

@@ -129,11 +129,8 @@ class ProjectShow extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <CategoryFooter/>
             </div>
         )
     }
 }
-
 export default ProjectShow;

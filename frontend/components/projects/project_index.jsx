@@ -16,6 +16,8 @@ class ProjectIndex extends React.Component {
 
     render(){
         // debugger;
+        let {categories} = this.props
+        // debugger;
         return (
             <div className="index-background">
                 <div className="proj-category-header">
@@ -29,11 +31,11 @@ class ProjectIndex extends React.Component {
                     <div className="all-projects-container">
                         {this.props.projectsWithAuthors.map( project => (
                             <ProjectIndexItem key={project.id} 
-                            project={project}/>
+                            project={project}
+                            category={categories[project.categoryId]}/>
                         ))}
                     </div>
                 </section>
-                <CategoryFooter/>
             </div>
         )
 

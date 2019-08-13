@@ -9,12 +9,12 @@ class ProjectIndexItem extends React.Component{
         super(props)
     }
 
-
     render(){
         const {title, description, authorName, amountPledged, pledgeGoal, 
-            endDate, categoryId, location, photo, id} = this.props.project;
+            endDate, location, photo, id} = this.props.project;
         let ratio = pledgeGoal > 0 ? amountPledged/pledgeGoal : 0;
         let width = calcWidth(ratio, pledgeGoal);
+        let category = this.props.category;
 
         let pledgeBarStyle = {
             width: width + '%'
@@ -42,7 +42,7 @@ class ProjectIndexItem extends React.Component{
                     <div className="index-stat-notes">{Math.floor(ratio*100)+"%"} funded</div>
                     <div className="index-stat-notes">{timeDiff.timeleft} {timeDiff.inc}</div>
                     <div className="index-stat-notes loc-cat">
-                        <span>categoryId:{categoryId}</span> <span className="loc"><img className="locpin-index" src={window.images.locPin} />{location}</span>
+                        <span>{category.categoryName}</span> <span className="loc"><img className="locpin-index" src={window.images.locPin} />{location}</span>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ const projectsWithAuthors = state => {
 
 const mapStateToProps = (state) =>({
     projectsWithAuthors: projectsWithAuthors(state),
+    categories: state.entities.categories
 });
 
 const mapDispatchToProps = dispatch =>({

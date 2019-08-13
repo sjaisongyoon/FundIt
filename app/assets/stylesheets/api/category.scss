@@ -1,0 +1,25 @@
+.category-desc-container{
+    display: flex;
+    max-width: 1366px;
+    margin: 60px auto 36px auto;
+    box-sizing: border-box;
+    padding: 0 60px 0 60px;
+    font-family: "Cooper Light", Georgia, Times, "Times New Roman", serif;    
+}
+
+.category-desc-container h3 {
+    font-size: 28px;
+    line-height: 3.6rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.category-desc-container p {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 18px 0;
+    padding-top: 12px;
+    color: #656969;
+    font-weight: 400;
+}
+
