@@ -15,18 +15,29 @@ ActiveRecord::Base.transaction do
     Reward.destroy_all
     Backing.destroy_all
 
-    categories = ['Art',
-        'Comics & Illustrations',
-        'Design & Tech',
-        'Film',
-        'Food & Craft',
-        'Games',
-        'Music',
-        'Publishing'
-    ];
+    # categories = ['Art',
+    #     'Comics & Illustrations',
+    #     'Design & Tech',
+    #     'Film',
+    #     'Food & Craft',
+    #     'Games',
+    #     'Music',
+    #     'Publishing'
+    # ];
 
-    categories.each do |category| 
-        Category.create(category_name: category)
+    categories = {'Art' => 'Discover the artists and organizations using Kickstarter to realize ambitious projects in visual art and performance.',
+        'Comics & Illustrations' => 'Explore fantastical worlds and original characters from Kickstarter’s community of comics creators and illustrators.',
+        'Design & Tech' => 'From fine design to innovative tech, discover projects from creators working to build a more beautiful future.',
+        'Film' => 'Join forces with the intrepid filmmakers and festival creators changing the way stories get told on screen.',
+        'Food & Craft' => 'See how artisans and entrepreneurs are using Kickstarter to break new ground in food, fashion, and crafts.',
+        'Games' => 'From tabletop adventures to beloved revivals, discover the projects forging the future of gameplay.',
+        'Music' => 'Discover new albums, performances, and independent venues from creators using Kickstarter to shape the future of sound.',
+        'Publishing'=> 'Explore how writers and publishers are using Kickstarter to bring new literature, periodicals, podcasts, and more to life.'
+    };
+
+
+    categories.each do |category, description| 
+        Category.create(category_name: category, description: description)
     end
     
 

@@ -114,7 +114,6 @@ class SessionForm extends React.Component {
                             <SessionFooterText path={path}/>
                         </div>
                     </div>
-                    <CategoryFooter/>
                 </div>
             </div>
         )

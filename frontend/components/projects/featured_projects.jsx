@@ -4,7 +4,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {fundPercent} from './project_calcs';
 import {CategoryFooter} from '../categories/category_footer';
-import {CategoryHeader} from '../categories/category_header';
+import CategoryHeader from '../categories/category_header';
 
 const featuredProjectsWithAuthors = state => {
     return Object.values(state.entities.projects).map((project) => {
@@ -94,8 +94,6 @@ class FeaturedProjects extends React.Component {
                         ))}
                     </ul>
                 </section>
-
-                <CategoryFooter/>
 
             </div>
         )
